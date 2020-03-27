@@ -1,0 +1,55 @@
+object frameTitulo: TframeTitulo
+  Left = 0
+  Top = 0
+  Width = 1034
+  Height = 68
+  TabOrder = 0
+  object pnlTitulo: TPanel
+    Left = 0
+    Top = 0
+    Width = 1034
+    Height = 68
+    Align = alClient
+    Color = clSilver
+    ParentBackground = False
+    TabOrder = 0
+    DesignSize = (
+      1034
+      68)
+    object lblTitulo: TLabel
+      Left = 24
+      Top = 16
+      Width = 107
+      Height = 35
+      Anchors = [akLeft, akTop, akBottom]
+      Caption = 'lblTitulo'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -32
+      Font.Name = 'Berlin Sans FB'
+      Font.Style = []
+      ParentFont = False
+    end
+    object bvlStatus: TBevel
+      Left = 888
+      Top = 16
+      Width = 137
+      Height = 35
+      Anchors = [akTop, akRight]
+    end
+    object lblState: TLabel
+      Left = 917
+      Top = 21
+      Width = 66
+      Height = 23
+      Anchors = [akRight]
+      Caption = 'lblState'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBackground
+      Font.Height = -21
+      Font.Name = 'Berlin Sans FB'
+      Font.Style = []
+      ParentFont = False
+    end
+  end
+end

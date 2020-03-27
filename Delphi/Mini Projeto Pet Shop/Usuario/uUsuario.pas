@@ -1,0 +1,41 @@
+unit uUsuario;
+
+interface
+type
+  TUsuarioClass = Class
+  public
+    sUsuario: String;
+    sSenha: String;
+    iCodigoUsuario: Integer;
+    bLembrarSenha: Boolean;
+    iNivelUsuario: Integer;
+
+    procedure setUsuario(Usuarionovo, Senha: String; CodigoUsuario,
+      NivelUsuario: Integer; LembrarSenha: Boolean);
+
+    constructor Construtor(Usuarionovo, Senha: String; CodigoUsuario,
+      NivelUsuario: Integer; LembrarSenha: Boolean);
+
+end;
+
+implementation
+
+{ TUsuarioClass }
+
+constructor TUsuarioClass.Construtor(Usuarionovo, Senha: String; CodigoUsuario,
+  NivelUsuario: Integer; LembrarSenha: Boolean);
+begin
+  setUsuario(Usuarionovo,senha,CodigoUsuario,NivelUsuario,LembrarSenha);
+end;
+
+procedure TUsuarioClass.setUsuario(Usuarionovo, Senha: String; CodigoUsuario,
+  NivelUsuario: Integer; LembrarSenha: Boolean);
+begin
+  sUsuario := Usuarionovo;
+  sSenha:= Senha;
+  iCodigoUsuario := CodigoUsuario;
+  bLembrarSenha := LembrarSenha;
+  iNivelUsuario := NivelUsuario;
+end;
+
+end.

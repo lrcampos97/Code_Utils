@@ -1,0 +1,952 @@
+inherited frmClientes: TfrmClientes
+  Caption = 'frmClientes'
+  ClientHeight = 600
+  ExplicitTop = -147
+  ExplicitHeight = 629
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited pgPrincipal: TPageControl
+    Height = 461
+    ExplicitHeight = 461
+    inherited pgPesquisa: TTabSheet
+      ExplicitHeight = 451
+      inherited dbGridPesquisa: TDBGrid
+        Height = 449
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Columns = <
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'CODIGOCLIENTE'
+            Title.Alignment = taCenter
+            Title.Caption = 'C'#243'digo Cliente'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -13
+            Title.Font.Name = 'Tahoma'
+            Title.Font.Style = []
+            Width = 91
+            Visible = True
+          end
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'NOME'
+            Title.Alignment = taCenter
+            Title.Caption = 'Nome'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -13
+            Title.Font.Name = 'Tahoma'
+            Title.Font.Style = []
+            Width = 171
+            Visible = True
+          end
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'FIDELIDADE'
+            Title.Alignment = taCenter
+            Title.Caption = 'Fidelidade'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -13
+            Title.Font.Name = 'Tahoma'
+            Title.Font.Style = []
+            Width = 82
+            Visible = True
+          end
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'VALORPENDENTE'
+            Title.Alignment = taCenter
+            Title.Caption = 'Valor Pendente'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -13
+            Title.Font.Name = 'Tahoma'
+            Title.Font.Style = []
+            Width = 117
+            Visible = True
+          end
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'ULTIMACOMPRA'
+            Title.Alignment = taCenter
+            Title.Caption = 'Ultima Compra'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -13
+            Title.Font.Name = 'Tahoma'
+            Title.Font.Style = []
+            Width = 168
+            Visible = True
+          end
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'INATIVO'
+            Title.Alignment = taCenter
+            Title.Caption = 'Inativo'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -13
+            Title.Font.Name = 'Tahoma'
+            Title.Font.Style = []
+            Visible = True
+          end
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'TELEFONEPRINCIPAL'
+            Title.Alignment = taCenter
+            Title.Caption = 'Telefone Principal'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -13
+            Title.Font.Name = 'Tahoma'
+            Title.Font.Style = []
+            Width = 116
+            Visible = True
+          end
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'ENDERECO'
+            Title.Alignment = taCenter
+            Title.Caption = 'Endere'#231'o'
+            Title.Font.Charset = DEFAULT_CHARSET
+            Title.Font.Color = clWindowText
+            Title.Font.Height = -13
+            Title.Font.Name = 'Tahoma'
+            Title.Font.Style = []
+            Width = 272
+            Visible = True
+          end>
+      end
+      inherited frePesquisar1: TfrePesquisar
+        Height = 451
+        ExplicitHeight = 451
+        inherited pnlPesquisa: TPanel
+          Height = 451
+          ExplicitHeight = 451
+          inherited lblQtdRegistros: TLabel
+            Top = 428
+            ExplicitTop = 389
+          end
+          inherited lblRegistros: TLabel
+            Top = 428
+            ExplicitTop = 389
+          end
+          inherited btnPesquisar: TSpeedButton
+            Top = 282
+            ExplicitTop = 282
+          end
+          inherited cbPesquisar: TComboBox
+            OnExit = frePesquisar1cbPesquisarExit
+            Items.Strings = (
+              '<Nenhum>'
+              'Codigo Cliente'
+              'Nome'
+              'CPF'
+              'Ativo'
+              'Inativo'
+              'Ultima Compra'
+              'Telefone principal'
+              'Endere'#231'o')
+          end
+        end
+      end
+    end
+    inherited pgCadastro: TTabSheet
+      OnEnter = pgCadastroEnter
+      ExplicitHeight = 451
+      object GroupBox1: TGroupBox
+        Left = 0
+        Top = 0
+        Width = 1036
+        Height = 137
+        Align = alTop
+        Color = clBtnFace
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+        object lblCodigoCliente: TLabel
+          Left = 9
+          Top = 24
+          Width = 87
+          Height = 16
+          Caption = 'C'#243'digo Cliente:'
+          FocusControl = dbedtCODIGOCLIENTE
+        end
+        object lblTipoPessoa: TLabel
+          Left = 210
+          Top = 24
+          Width = 92
+          Height = 16
+          Caption = 'Tipo de Pessoa:'
+        end
+        object lbl1: TLabel
+          Left = 443
+          Top = 24
+          Width = 104
+          Height = 16
+          Caption = 'Data de Cadastro:'
+        end
+        object lblCPFCNPJ: TLabel
+          Left = 704
+          Top = 24
+          Width = 31
+          Height = 16
+          Caption = 'CPF: '
+        end
+        object lblRG: TLabel
+          Left = 878
+          Top = 24
+          Width = 21
+          Height = 16
+          Caption = 'RG:'
+          FocusControl = dbedtRG
+        end
+        object lblNomeCliente: TLabel
+          Left = 9
+          Top = 66
+          Width = 38
+          Height = 16
+          Caption = 'Nome:'
+          FocusControl = dbedtNomeCliente
+        end
+        object lblRazao: TLabel
+          Left = 9
+          Top = 104
+          Width = 78
+          Height = 16
+          Caption = 'Raz'#227'o Social:'
+          FocusControl = dbedtRAZAOSOCIAL
+        end
+        object lblSexo: TLabel
+          Left = 704
+          Top = 66
+          Width = 33
+          Height = 16
+          Caption = 'Sexo:'
+        end
+        object lblDataNascimento: TLabel
+          Left = 704
+          Top = 104
+          Width = 101
+          Height = 16
+          Caption = 'Data Nascimento:'
+        end
+        object dbedtCODIGOCLIENTE: TDBEdit
+          Left = 102
+          Top = 21
+          Width = 98
+          Height = 24
+          DataField = 'CODIGOCLIENTE'
+          DataSource = dmClientes.dsCliente
+          Enabled = False
+          TabOrder = 0
+        end
+        object medtCPFCNPJ: TMaskEdit
+          Left = 741
+          Top = 21
+          Width = 124
+          Height = 24
+          EditMask = '!999.999.999\-99;1;_'
+          MaxLength = 14
+          TabOrder = 1
+          Text = '   .   .   -  '
+        end
+        object dbedtRG: TDBEdit
+          Left = 905
+          Top = 21
+          Width = 117
+          Height = 24
+          DataField = 'RG'
+          DataSource = dmClientes.dsPessoa
+          TabOrder = 2
+        end
+        object dbedtNomeCliente: TDBEdit
+          Left = 102
+          Top = 63
+          Width = 593
+          Height = 24
+          DataField = 'NOME'
+          DataSource = dmClientes.dsPessoa
+          TabOrder = 3
+        end
+        object dbedtRAZAOSOCIAL: TDBEdit
+          Left = 102
+          Top = 101
+          Width = 592
+          Height = 24
+          DataField = 'RAZAOSOCIAL'
+          DataSource = dmClientes.dsPessoa
+          TabOrder = 4
+        end
+        object cbbSexo: TComboBox
+          Left = 741
+          Top = 63
+          Width = 108
+          Height = 24
+          Style = csDropDownList
+          ItemIndex = 0
+          TabOrder = 5
+          Text = 'Masculino'
+          Items.Strings = (
+            'Masculino'
+            'Feminino')
+        end
+        object dtpDataCadastro: TDateTimePicker
+          Left = 560
+          Top = 21
+          Width = 134
+          Height = 24
+          Date = 42732.009075891200000000
+          Time = 42732.009075891200000000
+          TabOrder = 6
+        end
+        object dtpDataNascimento: TDateTimePicker
+          Left = 823
+          Top = 100
+          Width = 134
+          Height = 24
+          Date = 42732.009075891200000000
+          Time = 42732.009075891200000000
+          TabOrder = 7
+        end
+        object dbchkClienteAtivo: TDBCheckBox
+          Left = 889
+          Top = 65
+          Width = 97
+          Height = 17
+          Caption = 'Cliente Ativo'
+          DataField = 'INATIVO'
+          DataSource = dmClientes.dsCliente
+          TabOrder = 8
+        end
+        object cbbTipoPessoa: TComboBox
+          Left = 317
+          Top = 21
+          Width = 109
+          Height = 24
+          Style = csDropDownList
+          ItemIndex = 0
+          TabOrder = 9
+          Text = 'F'#237'sica'
+          OnChange = cbbTipoPessoaChange
+          Items.Strings = (
+            'F'#237'sica'
+            'Jur'#237'dica')
+        end
+      end
+      object pgcCadastro: TPageControl
+        Left = 0
+        Top = 143
+        Width = 1036
+        Height = 334
+        ActivePage = tsDadosCadastrais
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+        object tsDadosCadastrais: TTabSheet
+          Caption = 'Dados Cadastrais'
+          DesignSize = (
+            1028
+            303)
+          object grpContato: TGroupBox
+            Left = 0
+            Top = 0
+            Width = 561
+            Height = 105
+            Align = alCustom
+            Caption = 'Contato'
+            Color = clBtnFace
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 0
+            object lblEmail: TLabel
+              Left = 288
+              Top = 30
+              Width = 41
+              Height = 16
+              Caption = 'E-mail:'
+            end
+            object lblTelefonePrincipal: TLabel
+              Left = 16
+              Top = 30
+              Width = 107
+              Height = 16
+              Caption = 'Telefone Principal:'
+            end
+            object lblFoneOpcional1: TLabel
+              Left = 16
+              Top = 68
+              Width = 123
+              Height = 16
+              Caption = 'Telefone Opcional 1: '
+            end
+            object lblFoneOpcional2: TLabel
+              Left = 288
+              Top = 66
+              Width = 123
+              Height = 16
+              Caption = 'Telefone Opcional 2: '
+            end
+            object dbedtEMAIL: TDBEdit
+              Left = 354
+              Top = 25
+              Width = 197
+              Height = 24
+              DataField = 'EMAIL'
+              DataSource = dmClientes.dsPessoa
+              TabOrder = 0
+            end
+            object medtFonePrinciapl: TMaskEdit
+              Left = 145
+              Top = 25
+              Width = 113
+              Height = 24
+              EditMask = '!\(51\)00000-0000;1;_'
+              MaxLength = 14
+              TabOrder = 1
+              Text = '(51)     -    '
+            end
+            object medtFoneOpcional1: TMaskEdit
+              Left = 145
+              Top = 64
+              Width = 113
+              Height = 24
+              EditMask = '!\(51\)00000-0000;1;_'
+              MaxLength = 14
+              TabOrder = 2
+              Text = '(51)     -    '
+            end
+            object medtFoneOpcional2: TMaskEdit
+              Left = 417
+              Top = 62
+              Width = 134
+              Height = 24
+              EditMask = '!\(51\)00000-0000;1;_'
+              MaxLength = 14
+              TabOrder = 3
+              Text = '(51)     -    '
+            end
+          end
+          object grpCliente: TGroupBox
+            Left = 567
+            Top = 0
+            Width = 458
+            Height = 105
+            Anchors = [akLeft, akTop, akRight]
+            Caption = 'Adicionais'
+            Color = clBtnFace
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 1
+            object lblFidelidade: TLabel
+              Left = 16
+              Top = 28
+              Width = 67
+              Height = 16
+              Caption = 'Fidelidade: '
+            end
+            object lblValorPendente: TLabel
+              Left = 184
+              Top = 30
+              Width = 92
+              Height = 16
+              Caption = 'Valor Pendente:'
+            end
+            object lblUltimaCompra: TLabel
+              Left = 272
+              Top = 64
+              Width = 90
+              Height = 16
+              Caption = 'Ultima Compra:'
+            end
+            object lblDataUltimaCompra: TLabel
+              Left = 369
+              Top = 64
+              Width = 66
+              Height = 16
+              Caption = '26/07/2017'
+            end
+            object medtFidelidade: TMaskEdit
+              Left = 96
+              Top = 24
+              Width = 73
+              Height = 24
+              EditMask = '!\R$\ ##.##;'
+              MaxLength = 8
+              TabOrder = 0
+              Text = 'R$   .  '
+            end
+            object dbchkUsaLimiteCred: TDBCheckBox
+              Left = 16
+              Top = 65
+              Width = 153
+              Height = 17
+              Caption = 'Utiliza Limite de Cr'#233'dito'
+              DataField = 'UTILIZALIMITECRED'
+              DataSource = dmClientes.dsCliente
+              TabOrder = 1
+            end
+            object medtLimiteCredito: TMaskEdit
+              Left = 184
+              Top = 60
+              Width = 73
+              Height = 24
+              Enabled = False
+              EditMask = '!\R$\ ##.##;'
+              MaxLength = 8
+              TabOrder = 2
+              Text = 'R$   .  '
+            end
+            object medtValoPendente: TMaskEdit
+              Left = 288
+              Top = 24
+              Width = 73
+              Height = 24
+              EditMask = '!\R$\ ##.##;'
+              MaxLength = 8
+              TabOrder = 3
+              Text = 'R$   .  '
+            end
+          end
+          object grpEndereco: TGroupBox
+            Left = 0
+            Top = 108
+            Width = 1018
+            Height = 160
+            Align = alCustom
+            Caption = 'Endere'#231'o'
+            Color = clBtnFace
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 2
+            object lblCep: TLabel
+              Left = 16
+              Top = 87
+              Width = 27
+              Height = 16
+              Caption = 'CEP:'
+            end
+            object lblLogradouro: TLabel
+              Left = 16
+              Top = 36
+              Width = 70
+              Height = 16
+              Caption = 'Logradouro:'
+              FocusControl = dbedtLOGRADOURO
+            end
+            object lblNumero: TLabel
+              Left = 448
+              Top = 36
+              Width = 50
+              Height = 16
+              Caption = 'Numero:'
+              FocusControl = dbedtNUMERO
+            end
+            object lblBairro: TLabel
+              Left = 606
+              Top = 36
+              Width = 39
+              Height = 16
+              Caption = 'Bairro:'
+              FocusControl = dbedtBAIRRO
+            end
+            object lblComplemento: TLabel
+              Left = 606
+              Top = 86
+              Width = 84
+              Height = 16
+              Caption = 'Complemento:'
+              FocusControl = dbedtCOMPLEMENTO
+            end
+            object lblEstado: TLabel
+              Left = 255
+              Top = 87
+              Width = 43
+              Height = 16
+              Caption = 'Estado:'
+            end
+            object lblCidade: TLabel
+              Left = 378
+              Top = 87
+              Width = 44
+              Height = 16
+              Caption = 'Cidade:'
+            end
+            object medtCEP: TMaskEdit
+              Left = 112
+              Top = 83
+              Width = 124
+              Height = 24
+              EditMask = '00\.000\.000;1;_'
+              MaxLength = 10
+              TabOrder = 0
+              Text = '  .   .   '
+            end
+            object dbedtLOGRADOURO: TDBEdit
+              Left = 112
+              Top = 34
+              Width = 313
+              Height = 24
+              DataField = 'LOGRADOURO'
+              DataSource = dmClientes.dsEndereco
+              TabOrder = 1
+            end
+            object dbedtNUMERO: TDBEdit
+              Left = 516
+              Top = 34
+              Width = 69
+              Height = 24
+              DataField = 'NUMERO'
+              DataSource = dmClientes.dsEndereco
+              TabOrder = 2
+            end
+            object dbedtBAIRRO: TDBEdit
+              Left = 663
+              Top = 34
+              Width = 243
+              Height = 24
+              DataField = 'BAIRRO'
+              DataSource = dmClientes.dsEndereco
+              TabOrder = 3
+            end
+            object dbedtCOMPLEMENTO: TDBEdit
+              Left = 706
+              Top = 82
+              Width = 200
+              Height = 24
+              DataField = 'COMPLEMENTO'
+              DataSource = dmClientes.dsEndereco
+              TabOrder = 4
+            end
+            object dblkcbb1: TDBLookupComboBox
+              Left = 308
+              Top = 82
+              Width = 57
+              Height = 24
+              KeyField = 'CODIGOUF'
+              ListField = 'SIGLA'
+              ListSource = dmBase.dsUF
+              TabOrder = 5
+            end
+            object dblkcbbCidade: TDBLookupComboBox
+              Left = 440
+              Top = 82
+              Width = 145
+              Height = 24
+              KeyField = 'CODIGOMUNICIPIO'
+              ListField = 'NOME'
+              ListSource = dmBase.dsMunicipio
+              TabOrder = 6
+            end
+          end
+        end
+        object tsDadosAdicionais: TTabSheet
+          Caption = 'Informa'#231#245'es Adicionais'
+          ImageIndex = 1
+          object grp1: TGroupBox
+            Left = 0
+            Top = 0
+            Width = 1028
+            Height = 303
+            Align = alClient
+            Color = clBtnFace
+            ParentBackground = False
+            ParentColor = False
+            TabOrder = 0
+            object lblObservacao: TLabel
+              Left = 17
+              Top = 3
+              Width = 78
+              Height = 16
+              Caption = 'Observa'#231#245'es:'
+            end
+            object dbmmoOBSERVACOES: TDBMemo
+              Left = 17
+              Top = 25
+              Width = 535
+              Height = 227
+              DataField = 'OBSERVACOES'
+              DataSource = dmClientes.dsCliente
+              TabOrder = 0
+            end
+            inline frameFoto1: TframeFoto
+              Left = 589
+              Top = 0
+              Width = 256
+              Height = 259
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 1
+              ExplicitLeft = 589
+            end
+          end
+        end
+        object tsAnimais: TTabSheet
+          Caption = 'Animais'
+          ImageIndex = 2
+          object grpAnimais: TGroupBox
+            Left = 0
+            Top = 0
+            Width = 1028
+            Height = 303
+            Align = alClient
+            ParentBackground = False
+            TabOrder = 0
+            object btnAnimais: TSpeedButton
+              Left = 432
+              Top = 25
+              Width = 186
+              Height = 49
+              Caption = 'Animais'
+              Glyph.Data = {
+                F6060000424DF606000000000000360000002800000018000000180000000100
+                180000000000C006000000000000000000000000000000000000FFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB3C2D739649E2155941E50
+                8E1E508E21549439659EB3C2D7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFD1D8E1CAD2DCE8EBF0FFFFFF829DC023579C
+                194D901A4D91194D901A4C91194C901A4D9023579C829DC0FFFFFFE8EBF0CAD2
+                DCD1D8E1FFFFFFFFFFFFFFFFFFFFFFFFFBFBFCB8C3D047648A345B8E2049808A
+                A1C0245CA31B54A12D79C33991D91B3D622A5C983791D92C79C31A55A0245CA4
+                8AA1C0204980345B8E47648AB8C3D0FBFBFCFFFFFFFFFFFFD5DBE348668B3B66
+                9F3F77C13271C82B65B11D55A1307AC43D86C23568951A3C6111325921558537
+                82BF2F7AC41D55A12B65B13271C83F77C13B669F48668BD5DBE3FFFFFFFFFFFF
+                8C9DB43861945A8CCB3676CA3274CB3275CA225BA3387FC23566985F86AA3F63
+                8C1B3C6B10306122548A387FC2225BA33275CA3274CB3676CA5A8CCB3861948C
+                9DB4FFFFFFFFFFFF99A8BC4371AB6698D43E7ECD3278CD3279CE2663AD3B7DBE
+                2C5F9B6E98BF7AA5C9436A9B1E437D2A5C983B7DBE2663AC3279CE3278CD3E7E
+                CD6698D44371AB99A8BCFFFFFFFFFFFFEDF0F42E5B92689BD64788D0337CD033
+                7DD02A6DB83472B84B8CCA3469A53B659A3F6B9E3D70AA4B8CCA3472B82A6DB8
+                337DD0337CD04788D0689BD62E5B92EDF0F4FFFFFFFFFFFFFDFDFE7289A84B86
+                C75E98D73280D33282D32D79C42767B24F93DB64ACE766AEE867AEE864ACE74F
+                93DB2767B22D79C43282D33280D35E98D74B86C77289A8FDFDFEFFFFFFFFFFFF
+                FFFFFFE1E6EC3061994A90D73485D53387D63288D5266BB22573CA1D65C6165A
+                C3165AC31D65C62573C9266BB23288D53387D63485D54A90D7306199E1E6ECFF
+                FFFFFFFFFFFFFFFFFFFFFFFBFBFB65778C286EB2378BD7338AD8338AD9276DB1
+                3185CB1A3C613289CF3289CF1A3C613185CB276DB1338AD9338AD8378BD7296F
+                B3A0B1C6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA7A7A75B5B5B2E547F3086D133
+                8EDB338DDB2974B93084C93D97E2328AD0328AD03D97E23084C92B76BA338DDB
+                338EDB3086D14F759FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD4D4D46868688080
+                80838383657688406E9B307CC0437AAB346A992A74B22F84C82F84C82E78B54C
+                81B1689ECF3783C86795C2BDCFE0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                A3A3A3767677ADADADDAD9D9D9D9D9A9AAAB6C7D8E8E9FAED7D8D9D9D9D9ADAD
+                AD767776A3A3A3FBFDFFCEDFEEC2D3E3F9FAFCFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFF7F7F7F8C8B8CD7D7D7EDEDEEEDEDEED7D7D7919292D7D7D7
+                EDEDEEEDEDEED7D7D68C8C8C7F7F7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6B6B6B999999D4D4D5E8E8E7E8E8E8D4
+                D5D499999AD5D5D4E8E8E7E8E8E8D5D4D4999A9A6B6B6BFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF727272A1A1A1B6B7
+                B7D2D2D2D2D2D2B7B7B7202DCFB7B7B7D2D2D2D2D2D2B7B7B7A1A1A1727272FF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFE
+                848484A3A3A3A9AAA9AAA9A9A9A9AA202DCF202DCF202DCFA9A9A9A9AAA9AAA9
+                A9A3A3A3848484FEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFF7F7F7F9F9F9FB2B2B2B2B1B2374451B2B1B2B2B2B2B2B1B2
+                374451B1B2B2B2B2B29F9F9F7F7F7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFE7E7E78C8C8C8F9090B7B7B7BAB9BADCDCDCBA
+                B9B9B9BABABAB9BADCDCDCBAB9B9B7B7B79090908C8C8CE7E7E7FFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB0AFAF9797976D706FA0A0
+                A0BEBEBEC1C1C1C1C0C1C1C0C1C0C0C0C1C1C0BFBEBEA0A0A06D706F979797B0
+                AFAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF898989
+                AEAFAF7A7E7E7B7D7C9E9E9EB6B6B6C3C3C3C9C8C9C3C3C3B6B6B69E9E9E7B7D
+                7C7A7E7EAEAFAF898989FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFEDEDED7B7B7BBCBBBB888989686969808080ABABABA1A1A1919191A1A1A1
+                ABABAB808080686969888989BCBBBB7B7B7BEDEDEDFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFBCBCBC6D6D6D717171828282CBCBCBFBFBFBFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFBFBFBCBCBCB8282827171716D6D6DBCBCBCFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEDEDED9D9D9DE0E0E0FEFEFEFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEE0E0E09D
+                9D9DEDEDEDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+            end
+            object btnAbrirAnimal: TSpeedButton
+              Left = 220
+              Top = 25
+              Width = 186
+              Height = 49
+              Caption = 'Abrir Animal Selecionado'
+              Glyph.Data = {
+                0A070000424D0A07000000000000360000002800000019000000170000000100
+                180000000000D4060000120B0000120B00000000000000000000FFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFDEEADEE5EDE5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFAADAC077CA9F69C89766C89760C69265C7958FD1B0E2
+                EFE5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB9DEC75BC28D64D29A5FDD9E4EDF9643
+                DE8F44DE904BDD9350D49145C08190CFAFFFFFFFFFFFFFFFFFFFFFFFFF00FFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF87CDA856C68D62
+                E2A129D9800DD16E0DD06E0ED06E0BD06C09D06B14D4733DDD8D48CB896ABE92
+                FFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFF8DCEAC5ECC9450E1980CD16D11D17017D27310D17013D2722CD9822FDA84
+                1BD57707CF6A2FDC854CCF8C70BE94FFFFFFF0F0F000FFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFC3E1CD57C48D5EE4A117D2741AD37616D2730ED06E
+                2DD98267DDA259CB9050C88A57D39449DF9418D7773EE39044C784A4CDB6FFFF
+                FF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5BBF8C7AE4AE2AD77F
+                2AD67F18D27410D16F2CD9816DD8A26DC496C6E2CFCEE6D692D1AF4DC2875DE3
+                9F29E08354E79D4DBE84DEE5E000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                B3DCC36CD19D57E29C38D88728D67E13D17111D27068DEA360BF8EFFFFFFFFFF
+                FFFFFFFFFFFFFFCEE3D346BB7F60E9A43AE9914CD38E7DBF9C00FFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFF71C79B7FE3B144DC8F44DB8F1ED4780FD06E35DB
+                885DC992CAE3D1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBBD9C53DBF7D63ECA745
+                CD8882C19F00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF65C5947FE9B44EDD
+                9545DB8F15D2720CD06D52DF9861C591FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFA2CEB755BA8679C09CE4E8E500FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFF6CCD9C79E8B05DE09D3FDA8B13D27114D47360DE9E7ECCA4FFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF75D3A27DE8B26AE2A53ADA8919D5771F
+                DA7B6BE0A466BE92ECF0ECEAF0EAEAF0EAE8F2EAE5F4ECFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFF00D7EFE23EB17662C59270CB9C71CB9C65C49398E2BC7E
+                E7B277E6AE3BDD8B21D97C25DD806DE7A960C49164C69461C79368CB983CB878
+                5DBB8AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFC5E4D26DCB9CC6
+                F9DF99EEC3A1F0C88EEBBD81E8B484EAB63EDF8E29DE8231E18838E38D5DEDA4
+                59EBA165EFA999EFC45AC18CE9F3EBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FF00FFFFFFFFFFFFAAD7BB6DCC9CA2F1C97AE6AF84E9B68BECBA8CEDBC43E392
+                30E18835E28A33E2892BE1852EE38878EAB051BD85E6EEE6FFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFF8FCDAA84D6ADA5F4CC
+                84EBB78FEEBE8FEFBE45E59430E18834E28A32E2892FE3887BEDB354BF89D7E7
+                D9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFF
+                FFFFFFFFFFFF76C79B95E0BAA3F6CC8DEFBD91EFC046E59530E18733E2892DE2
+                8676EEB154C089C5E1CDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF68C293A5E9C69FF5C990EF
+                BF4AE5972FE1872BE28570EEAE5AC58EB4DBC3FFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFF5FBF8EAFEFCF9DF3C84EE69925E08168EEAA61CB96A0D4B6FFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE6EEE65ABF8ABDF5D952E89C58ECA16A
+                D29D8FCEABFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCF
+                E4D260C391A9F9D16CD6A080C8A0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFB8DFC854BE8877C99FFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9ED2B2
+                F1F7F1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFF00}
+            end
+            object btnNovoAnimal: TSpeedButton
+              Left = 18
+              Top = 25
+              Width = 186
+              Height = 49
+              Caption = 'Cadastrar Novo Animal'
+              Glyph.Data = {
+                F6060000424DF606000000000000360000002800000018000000180000000100
+                180000000000C006000000000000000000000000000000000000FFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF58A47158A47158A47158A47158A4
+                7158A47158A47158A471FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF58A37085BD9D
+                85BD9D85BD9D85BD9D85BD9D85BD9D56A26EFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFF56A26C84D5B15ED09D5ED09D5ED09D5ED09D70C79C53A06AFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFF53A0698CD8B662D19F62D19F62D19F62D19F73C89E50
+                9E67FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF509D6592DBBA67D2A267D2A267D2
+                A267D2A275C9A04D9B63FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4D9A6097DDBE
+                6CD3A56CD3A56CD3A56CD3A57ACBA24A985EFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFF49975C99DEC072D5A872D5A872D5A872D5A87FCBA546955AFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFF4593579ADFC078D6AC78D6AC78D6AC78D6AC84CDA942
+                9155FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF58A47158A370
+                56A26C53A069509D654D9A6049975C4593573E8E5098DEBF7ED8B07ED8B07ED8
+                B07ED8B08ACFAB3E8E5042915546955A4A985E4D9B63509E6753A06A56A26E58
+                A47158A471A7E6CA74CAA072C89D74C99F78CBA17ECBA482CCA888CFAA8ED0AD
+                85DAB485DAB485DAB485DAB477C9A072C89D74C99F78CBA17ECBA482CCA888CF
+                AA8ED0AD85BD9D58A47158A471A7E6CA8CDCB88CDCB88CDCB88CDCB88CDCB88C
+                DCB88CDCB88CDCB88CDCB88CDCB88CDCB88CDCB88CDCB88CDCB88CDCB88CDCB8
+                8CDCB88CDCB88CDCB88CDCB885BD9D58A47158A471A7E6CA93DDBC93DDBC93DD
+                BC93DDBC93DDBC93DDBC93DDBC93DDBC93DDBC93DDBC93DDBC93DDBC93DDBC93
+                DDBC93DDBC93DDBC93DDBC93DDBC93DDBC93DDBC85BD9D58A47158A471A7E6CA
+                99DFC099DFC099DFC099DFC099DFC099DFC099DFC099DFC099DFC099DFC099DF
+                C099DFC099DFC099DFC099DFC099DFC099DFC099DFC099DFC099DFC085BD9D58
+                A47158A471A7E6CAA0E1C4A0E1C4A0E1C4A0E1C4A0E1C4A0E1C4A0E1C4A0E1C4
+                A0E1C4A0E1C4A0E1C4A0E1C4A0E1C4A0E1C4A0E1C4A0E1C4A0E1C4A0E1C4A0E1
+                C4A0E1C485BD9D58A47158A471A7E6CA94DDBD98DEBF9ADFC099DEC097DDBE92
+                DBBA8CD8B684D5B1A7E3C8A7E3C8A7E3C8A7E3C87AD0A69ADFC09ADFC099DEC0
+                97DDBE92DBBA8CD8B684D5B185BD9D58A47158A47156A26E53A06A509E674D9B
+                634A985E46955A4291553E8E508CD8B6ADE5CCADE5CCADE5CCADE5CC80D1A93E
+                8E5045935749975C4D9A60509D6553A06956A26C58A37058A471FFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF45935792DBBAB3E6D0B3E6D0B3E6
+                D0B3E6D087D1AC429155FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF49975C97DDBE
+                B9E8D3B9E8D3B9E8D3B9E8D38CD2AE46955AFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFF4D9A6099DEC0BEE9D6BEE9D6BEE9D6BEE9D691D3B14A985EFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFF509D659ADFC0C3EAD9C3EAD9C3EAD9C3EAD996D3B24D
+                9B63FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF53A06998DEBFC7EBDBC7EBDBC7EB
+                DBC7EBDB9BD4B5509E67FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF56A26C94DDBD
+                CAECDDCAECDDCAECDDCAECDD9ED5B753A06AFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFF58A370A7E6CAA7E6CAA7E6CAA7E6CAA7E6CAA7E6CA56A26EFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FFFFFFFFFFFFFFFFFFFF58A47158A47158A47158A47158A47158A47158A47158
+                A471FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+            end
+            object dbgrd1: TDBGrid
+              Left = 2
+              Top = 96
+              Width = 1014
+              Height = 173
+              Align = alCustom
+              DataSource = dmClientes.dsAnimais
+              TabOrder = 0
+              TitleFont.Charset = DEFAULT_CHARSET
+              TitleFont.Color = clWindowText
+              TitleFont.Height = -13
+              TitleFont.Name = 'Tahoma'
+              TitleFont.Style = []
+            end
+          end
+        end
+      end
+    end
+  end
+  inherited freBotoes: TfreBotoes
+    Top = 529
+    ExplicitTop = 529
+    inherited ActionFrameBotoes: TActionList
+      inherited actPost: TDataSetPost
+        OnExecute = freBotoesactPostExecute
+      end
+      inherited actCancel: TDataSetCancel
+        OnExecute = freBotoesactCancelExecute
+      end
+    end
+  end
+  inherited freTitulo: TframeTitulo
+    inherited pnlTitulo: TPanel
+      inherited lblTitulo: TLabel
+        Width = 271
+        Caption = 'Cadastro de Clientes'
+        ExplicitWidth = 271
+      end
+    end
+  end
+end

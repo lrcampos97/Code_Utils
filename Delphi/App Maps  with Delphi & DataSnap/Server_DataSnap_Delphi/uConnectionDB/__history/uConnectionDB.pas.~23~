@@ -1,0 +1,59 @@
+unit uConnectionDB;
+
+interface
+
+uses SysUtils, FireDAC.Comp.Client;
+
+type
+  TConnectionDB = class
+  private
+      fConnection : TFDConnection;
+    protected
+      procedure ConfigureDB;
+      {procedure ConfigurarTabelas;
+      procedure CriarTabela(sTabela : String);}
+    public
+      constructor Create;
+      destructor Destroy;
+
+    published
+      property Connection : TFDConnection read fConnection;
+  end;
+
+implementation
+
+{ TConnectionDB }
+
+procedure TConnectionDB.ConfigureDB;
+Const
+  sNameDB = 'db\banco.db3';
+Var
+  sDbPath          : String;
+  handleFile       : Integer;
+begin
+  try
+    // Passa os parametros de Conexão e Conecta ao Banco de Dados
+    Connection.LoginPrompt := False;
+    Connection.Params.Values['DriverID']     := 'MySql';
+    Connection.Params.Values['Server']       := 'localhost';
+    Connection.Params.Values['DataBase']     := 'test';
+    Connection.Params.Values['User_Name']    := 'localhost';
+    Connection.Connected := True;
+  except  
+    on e: exception do
+      raise Exception.Create('TConnectionDB.ConfigureDB:' + e.Message);
+  end;  
+end;
+
+constructor TConnectionDB.Create;
+begin
+  fConnection := TFDConnection.Create(nil);
+  ConfigureDB;
+end;
+
+destructor TConnectionDB.Destroy;
+begin
+  FreeAndNil(fConnection);
+end;
+
+end.

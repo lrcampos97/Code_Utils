@@ -1,0 +1,265 @@
+unit uMaps;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Edit,
+  FMX.StdCtrls, FMX.Controls.Presentation, FMX.Layouts, FMX.Objects,
+  FMX.TabControl, FMX.Maps, System.Sensors, System.Sensors.Components,uDM,
+  System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.EngExt,
+  Fmx.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope,
+
+  REST.Client,
+  Web.HTTPApp,
+  REST.Types,
+  System.JSON, IPPeerClient, Data.Bind.ObjectScope, FMX.MultiView, FMX.ListBox
+  ;
+
+type
+  TForm1 = class(TForm)
+    TabControl: TTabControl;
+    TabLogin: TTabItem;
+    TabMain: TTabItem;
+    RtgLogin: TRectangle;
+    Layout1: TLayout;
+    btnAcessar: TButton;
+    lbl1: TLabel;
+    edtUsuario: TEdit;
+    lbl2: TLabel;
+    edtSenha: TEdit;
+    lbl3: TLabel;
+    img1: TImage;
+    RtgRegister: TRectangle;
+    Layout3: TLayout;
+    btnCreateAccount: TButton;
+    edtEmail: TEdit;
+    edtName: TEdit;
+    lbl4: TLabel;
+    lbl5: TLabel;
+    lbl6: TLabel;
+    lbl7: TLabel;
+    edtPassword: TEdit;
+    BindSourceDB1: TBindSourceDB;
+    BindingsList1: TBindingsList;
+    Layout4: TLayout;
+    lbl8: TLabel;
+    lbl9: TLabel;
+    edt_origem: TEdit;
+    edt_destino: TEdit;
+    lbl_distancia: TLabel;
+    lbl_valor: TLabel;
+    lbl10: TLabel;
+    lbl_tempo: TLabel;
+    btn1: TButton;
+    tlb1: TToolBar;
+    btn2: TSpeedButton;
+    MultiViewMain: TMultiView;
+    TabItem1: TTabItem;
+    tlb2: TToolBar;
+    btnMenu: TSpeedButton;
+    Layout2: TLayout;
+    RtgMenu: TRectangle;
+    img2: TImage;
+    lstMain: TListBox;
+    ListBoxItem1: TListBoxItem;
+    ListBoxItem2: TListBoxItem;
+    ListBoxItem3: TListBoxItem;
+    lbl11: TLabel;
+    ListBoxItem4: TListBoxItem;
+    StyleBook1: TStyleBook;
+    btn3: TSpeedButton;
+    lbl12: TLabel;
+    procedure btnAcessarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure lbl3Click(Sender: TObject);
+    procedure btnCreateAccountClick(Sender: TObject);
+    procedure btn1Click(Sender: TObject);
+    procedure btn2Click(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure btn3Click(Sender: TObject);
+    procedure MultiViewMainPaint(Sender: TObject; Canvas: TCanvas;
+      const ARect: TRectF);
+    procedure LocationSensor1LocationChanged(Sender: TObject; const OldLocation,
+      NewLocation: TLocationCoord2D);
+  private
+    { Private declarations }
+    DM: TDataModule1;
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.fmx}
+{$R *.Macintosh.fmx MACOS}
+{$R *.iPhone55in.fmx IOS}
+{$R *.LgXhdpiPh.fmx ANDROID}
+{$R *.iPhone4in.fmx IOS}
+{$R *.SmXhdpiPh.fmx ANDROID}
+{$R *.Moto360.fmx ANDROID}
+{$R *.SSW3.fmx ANDROID}
+{$R *.Windows.fmx MSWINDOWS}
+{$R *.iPhone.fmx IOS}
+{$R *.XLgXhdpiTb.fmx ANDROID}
+
+procedure TForm1.btn1Click(Sender: TObject);
+var
+  retorno : TJSONObject;
+  prows : TJSONPair;
+  arrayr : TJSONArray;
+  orows : TJSONObject;
+  arraye : TJSONArray;
+  oelementos : TJSONObject;
+  oduracao, odistancia : TJSONObject;
+
+  distancia_str, duracao_str : string;
+  distancia_int, duracao_int : integer;
+
+  valor : double;
+begin
+  //https://developers.google.com/maps/documentation/distance-matrix/
+
+  //http://maps.googleapis.com/maps/api/distancematrix/json?origins={origem}
+  //&destinations={destino}&mode=driving&language=pt-BR&key=???????
+
+  //RESTRequest1.Resource := 'json?origins={origem}&destinations={destino}&mode=driving&language=pt-BR&key=';
+ { RESTRequest1.Params.AddUrlSegment('origem', edt_origem.Text);
+  RESTRequest1.Params.AddUrlSegment('destino', edt_destino.Text);
+  RESTRequest1.Execute;
+
+  retorno := RESTRequest1.Response.JSONValue as TJSONObject;
+
+  if retorno.GetValue('status').Value <> 'OK' then
+  begin
+    showmessage('Ocorreu um erro ao calcular a rota.');
+    exit;
+  end;
+
+
+  prows := retorno.Get('rows');
+  arrayr := prows.JsonValue as TJSONArray;
+  orows := arrayr.Items[0] as TJSONObject;
+  arraye := orows.GetValue('elements') as TJSONArray;
+  oelementos := arraye.Items[0] as TJSONObject;
+
+  odistancia := oelementos.GetValue('distance') as TJSONObject;
+  oduracao := oelementos.GetValue('duration') as TJSONObject;
+
+  distancia_str := odistancia.GetValue('text').Value;
+  distancia_int := odistancia.GetValue('value').Value.ToInteger;
+
+  duracao_str := oduracao.GetValue('text').Value;
+  duracao_int := oduracao.GetValue('value').Value.ToInteger;
+
+
+  lbl_distancia.Text := 'Distância: ' + distancia_str;
+  lbl_tempo.Text := 'Tempo: ' + duracao_str;
+
+  valor := (distancia_int * 0.01) + (duracao_int * 0.0001);
+  lbl_valor.Text := 'R$ ' + FormatFloat('#,##0.00', valor);}
+end;
+
+procedure TForm1.btn2Click(Sender: TObject);
+begin
+  RtgRegister.Visible := False;
+end;
+
+procedure TForm1.btn3Click(Sender: TObject);
+begin
+  ShowMessage('Usuário desconectado!');
+  TabControl.TabIndex := 0;
+end;
+
+procedure TForm1.btnAcessarClick(Sender: TObject);
+begin
+  // valida usuário
+  with dm do
+  begin
+    qryAux.Close;
+    qryAux.SQL.Clear;
+    qryAux.SQL.Add('SELECT nome,password FROM CLIENTE where nome = :nome and password = :senha');
+    qryAux.ParamByName('nome').AsString := Trim(edtUsuario.Text);
+    qryAux.ParamByName('senha').AsString := Trim(edtSenha.Text);
+    qryAux.Open;
+  end;
+
+  if dm.qryAux.RecordCount > 0 then
+    TabControl.TabIndex := 1
+  else
+     raise Exception.Create('Usuário ou Senha incorretos');
+
+end;
+
+
+procedure TForm1.btnCreateAccountClick(Sender: TObject);
+begin
+  if edtName.Text = '' then
+    raise Exception.Create('Informe o nome');
+
+  if edtemail.Text = '' then
+    raise Exception.Create('Informe o email');
+
+  if edtPassword.Text = '' then
+    raise Exception.Create('Informe a senha');
+
+  // Insere novo usuário...
+  with DM do
+  begin
+    qryAux.Close;
+    qryAux.sql.Clear;
+    qryAux.sql.Add('insert into cliente(nome, email, password)');
+    qryAux.sql.Add('values(:nome, :email, :password)');
+    qryAux.ParamByName('nome').Value := edtName.Text;
+    qryAux.ParamByName('password').Value := edtPassword.Text;
+    qryAux.ParamByName('email').Value := edtEmail.Text;
+    qryAux.ExecSQL;
+  end;
+
+  ShowMessage('Usuário cadastrado com sucesso!');
+  TabControl.TabIndex := 1;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  dm := TDataModule1.Create(nil);
+
+  TabControl.ActiveTab := TabLogin;
+  TabLogin.Enabled := True;
+  TabControl.TabPosition := TTabPosition.None;
+  RtgLogin.Visible := true;
+  Layout1.Visible := true;
+end;
+
+procedure TForm1.FormDestroy(Sender: TObject);
+begin
+  FreeAndNil(DM);
+end;
+
+procedure TForm1.lbl3Click(Sender: TObject);
+begin
+  RtgRegister.Visible := True;
+  edtName.SetFocus;
+end;
+
+procedure TForm1.LocationSensor1LocationChanged(Sender: TObject;
+  const OldLocation, NewLocation: TLocationCoord2D);
+var
+  LSettings      : TFormatSettings;
+  LDecSeparator  : Char;
+begin
+
+
+end;
+
+procedure TForm1.MultiViewMainPaint(Sender: TObject; Canvas: TCanvas;
+  const ARect: TRectF);
+begin
+  ShowMessage('teste');
+  ShowMessage('teste');
+end;
+
+end.

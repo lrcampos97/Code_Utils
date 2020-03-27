@@ -1,0 +1,67 @@
+unit frePesquisa;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.StdCtrls,
+  Vcl.ExtCtrls;
+
+type
+  TfrePesquisar = class(TFrame)
+    pnlPesquisa: TPanel;
+    cbCriterios: TComboBox;
+    lblPesquisar: TLabel;
+    Label1: TLabel;
+    lblQtdRegistros: TLabel;
+    lblRegistros: TLabel;
+    btnPesquisar: TSpeedButton;
+    edtPesquisar: TEdit;
+    cbPesquisar: TComboBox;
+    procedure cbPesquisarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure CBTipoNumerico;
+    procedure CBTipoTexto;
+    procedure CBTipoAtivInativo;
+  end;
+
+implementation
+
+{$R *.dfm}
+
+{ TfrePesquisar }
+
+procedure TfrePesquisar.cbPesquisarClick(Sender: TObject);
+begin
+  cbCriterios.ItemIndex := 0;
+end;
+
+procedure TfrePesquisar.CBTipoAtivInativo;
+begin
+  cbCriterios.Items.Text :=
+  '<Nenhum>' + #13 +
+  'Igual';
+end;
+
+procedure TfrePesquisar.CBTipoNumerico;
+begin
+  cbCriterios.Items.Text :=
+  '<Nenhum>' + #13 +
+  'Igual' + #13 +
+  'Maior' + #13 +
+  'Menor';
+end;
+
+procedure TfrePesquisar.CBTipoTexto;
+begin
+  cbCriterios.Items.Text :=
+  '<Nenhum>' + #13 +
+  'Igual' + #13 +
+  'Contém' + #13 +
+  'Diferente';
+end;
+
+end.

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/09/14 02:06:49.000.711,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/09/17 17:05:28.000.184,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/09/22 18:11:13.000.830,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/11/20 22:49:10.000.480,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/11/28 00:10:41.000.945,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/11/28 00:19:41.000.011,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/11/28 21:52:55.000.643,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/11/28 21:54:58.000.938,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/11/28 21:55:28.000.490,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Frames\freButtons.pas</Transaction>
+    <Transaction>2016/11/28 21:55:28.000.983,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Frames\freTitulo.pas</Transaction>
+    <Transaction>2016/11/28 21:55:28.000.618,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Frames\frePesquisa.pas</Transaction>
+    <Transaction>2016/11/28 21:55:56.000.902,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Adicionais\uUtils.pas</Transaction>
+    <Transaction>2016/11/28 21:55:56.000.857,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Adicionais\uTypes.pas</Transaction>
+    <Transaction>2016/11/28 21:57:08.000.228,C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\Cliente.dproj</Transaction>
+    <Transaction>2016/11/28 21:57:22.000.254,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\CadPadrao\CadPadrao.pas</Transaction>
+    <Transaction>2016/11/28 21:57:55.000.405,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\Unit1.pas</Transaction>
+    <Transaction>2016/11/28 21:59:02.000.179,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\Unit1.dfm=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\frmCliente.dfm</Transaction>
+    <Transaction>2016/11/28 21:59:02.000.179,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\Unit1.pas=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\frmCliente.pas</Transaction>
+    <Transaction>2016/11/28 22:09:06.000.464,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\dmBase\UdmBase.pas</Transaction>
+    <Transaction>2016/11/28 22:09:35.000.936,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\Unit1.pas</Transaction>
+    <Transaction>2016/11/28 22:10:09.000.797,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\Unit1.dfm=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\dmCliente.dfm</Transaction>
+    <Transaction>2016/11/28 22:10:09.000.797,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\Unit1.pas=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\dmCliente.pas</Transaction>
+    <Transaction>2016/12/05 22:11:38.000.288,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\dmCliente.pas=</Transaction>
+    <Transaction>2016/12/05 22:15:38.000.231,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\Unit1.pas</Transaction>
+    <Transaction>2016/12/05 22:17:57.000.417,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\Unit1.pas</Transaction>
+    <Transaction>2016/12/05 22:18:45.000.415,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\Unit1.dfm=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\dmCliente.dfm</Transaction>
+    <Transaction>2016/12/05 22:18:45.000.415,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\Unit1.pas=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\dmCliente.pas</Transaction>
+    <Transaction>2016/12/22 21:39:53.000.562,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\Unit2.pas</Transaction>
+    <Transaction>2017/01/15 21:53:49.000.378,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Cliente\Cliente.todo</Transaction>
+    <Transaction>2017/05/05 23:02:48.000.764,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projeto Pet Shop\Project OLD\Cliente\Unit1.pas</Transaction>
+    <Transaction>2017/05/05 23:16:48.000.634,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projeto Pet Shop\Project OLD\Cliente\Unit1.pas</Transaction>
+    <Transaction>2017/05/06 00:56:55.000.827,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projeto Pet Shop\Project OLD\Frames\freFoto.pas=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projeto Pet Shop\Project OLD\Cliente\Unit1.pas</Transaction>
+    <Transaction>2017/05/06 00:56:55.000.827,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projeto Pet Shop\Project OLD\Frames\freFoto.dfm=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projeto Pet Shop\Project OLD\Cliente\Unit1.dfm</Transaction>
+    <Transaction>2017/05/06 02:02:51.000.154,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projeto Pet Shop\Project OLD\Cliente\OKCANCL2.pas</Transaction>
+    <Transaction>2017/05/06 02:03:17.000.097,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projeto Pet Shop\Project OLD\Cliente\ABOUT.pas</Transaction>
+    <Transaction>2017/05/06 02:03:39.000.772,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projeto Pet Shop\Project OLD\Cliente\Unit1.pas</Transaction>
+    <Transaction>2017/05/06 02:04:38.000.542,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projeto Pet Shop\Project OLD\Adicionais\frmFoto.dfm=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projeto Pet Shop\Project OLD\Cliente\Unit1.dfm</Transaction>
+    <Transaction>2017/05/06 02:04:38.000.542,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projeto Pet Shop\Project OLD\Adicionais\frmFoto.pas=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projeto Pet Shop\Project OLD\Cliente\Unit1.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>

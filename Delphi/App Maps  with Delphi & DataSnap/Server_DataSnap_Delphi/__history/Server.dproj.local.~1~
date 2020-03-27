@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/09/14 02:06:49.000.711,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/09/17 17:05:28.000.184,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/09/22 18:11:13.000.830,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/11/20 22:49:10.000.480,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/11/28 00:10:41.000.945,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/11/28 00:19:41.000.011,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/11/28 21:52:55.000.643,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/01/20 23:01:19.000.721,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/04/24 00:44:49.000.814,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/06/07 20:01:01.000.390,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/07/08 16:45:04.000.593,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/05 01:02:00.000.899,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.pas</Transaction>
+    <Transaction>2017/09/05 01:02:00.000.537,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\FormUnit1.pas</Transaction>
+    <Transaction>2017/09/05 01:02:00.000.782,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2017/09/19 00:27:12.000.756,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.pas</Transaction>
+    <Transaction>2017/09/19 00:27:12.000.854,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\ServerConst1.pas</Transaction>
+    <Transaction>2017/09/19 00:27:12.000.628,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2017/09/19 00:28:09.000.939,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2017/09/19 00:28:09.000.741,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\FormUnit1.pas</Transaction>
+    <Transaction>2017/09/19 00:28:10.000.057,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.pas</Transaction>
+    <Transaction>2017/09/19 00:28:33.000.374,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\DataSnap\CadCliente\Server\frmServer.dfm=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\FormUnit1.dfm</Transaction>
+    <Transaction>2017/09/19 00:28:33.000.374,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\DataSnap\CadCliente\Server\frmServer.pas=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\FormUnit1.pas</Transaction>
+    <Transaction>2017/09/19 00:28:42.000.100,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\DataSnap\CadCliente\Server\WebModule.dfm=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.dfm</Transaction>
+    <Transaction>2017/09/19 00:28:42.000.100,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\DataSnap\CadCliente\Server\WebModule.pas=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.pas</Transaction>
+    <Transaction>2017/09/19 00:28:47.000.412,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\DataSnap\CadCliente\Server\ServerMethods.pas=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2017/09/19 00:28:47.000.412,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\DataSnap\CadCliente\Server\ServerMethods.dfm=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.dfm</Transaction>
+    <Transaction>2017/09/19 00:28:55.000.497,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\DataSnap\CadCliente\Server\Server.dproj=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2017/09/24 21:57:02.000.334,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\AppMaps\ServerWS\Unit1.pas</Transaction>
+    <Transaction>2017/09/24 21:57:13.000.724,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\AppMaps\ServerWS\Unit1.pas=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\AppMaps\ServerWS\uClient\uClient.pas</Transaction>
+    <Transaction>2017/09/24 22:38:48.000.458,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\AppMaps\ServerWS\Unit1.pas</Transaction>
+    <Transaction>2017/09/24 22:40:02.000.947,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\AppMaps\ServerWS\Unit1.pas=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\AppMaps\ServerWS\uConnectionDB\uConnectionDB.pas</Transaction>
+    <Transaction>2017/09/26 00:29:44.000.595,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\AppMaps\ServerWS\Unit1.pas</Transaction>
+    <Transaction>2017/10/13 22:52:13.934,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\AppMaps\ServerWS\Unit1.pas</Transaction>
+    <Transaction>2017/10/13 23:14:35.002,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\AppMaps\ServerWS\Unit1.pas</Transaction>
+    <Transaction>2017/10/13 23:14:55.879,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\AppMaps\ServerWS\uLib\uLib.pas=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\AppMaps\ServerWS\Unit1.pas</Transaction>
+    <Transaction>2017/10/13 23:15:28.848,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\AppMaps\ServerWS\Unit1.pas</Transaction>
+    <Transaction>2017/10/13 23:15:36.968,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\AppMaps\ServerWS\uLib\uServerLib.pas=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobile\AppMaps\ServerWS\Unit1.pas</Transaction>
+    <Transaction>2017/10/14 00:04:05.186,=C:\Users\Luiz Felipe Campos\Downloads\helpers-master\Data.DB.Helper.pas</Transaction>
+    <Transaction>2017/10/14 00:05:06.103,=C:\Users\Luiz Felipe Campos\Downloads\helpers-master\System.uJSON.pas</Transaction>
+    <Transaction>2017/10/14 00:10:06.312,C:\Users\Luiz Felipe Campos\Downloads\helpers-master\Data.DB.Helper.pas=</Transaction>
+    <Transaction>2017/10/14 00:10:09.150,C:\Users\Luiz Felipe Campos\Downloads\helpers-master\System.uJSON.pas=</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5" Android="1AG716C8J"/>
+	</ActiveMobileDevice>
+</BorlandProject>

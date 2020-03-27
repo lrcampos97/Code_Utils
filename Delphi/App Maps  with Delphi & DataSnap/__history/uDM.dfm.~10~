@@ -1,0 +1,50 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 131
+  Width = 413
+  object Connection: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobil' +
+        'e\AppMaps\DB\banco.db3'
+      'LockingMode=Normal'
+      'DriverID=SQLite')
+    Connected = True
+    LoginPrompt = False
+    Left = 72
+    Top = 56
+  end
+  object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
+    Left = 184
+    Top = 56
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'FMX'
+    Left = 320
+    Top = 56
+  end
+  object QryCliente: TFDQuery
+    Connection = Connection
+    SQL.Strings = (
+      'SELECT * FROM CLIENTE')
+    Left = 72
+    Top = 7
+    object QryClienteNOME: TWideStringField
+      FieldName = 'NOME'
+      Origin = 'NOME'
+      Required = True
+      Size = 100
+    end
+    object QryClienteEMAIL: TWideStringField
+      FieldName = 'EMAIL'
+      Origin = 'EMAIL'
+      Size = 100
+    end
+    object QryClientePASSWORD: TWideStringField
+      FieldName = 'PASSWORD'
+      Origin = 'PASSWORD'
+      Size = 100
+    end
+  end
+end

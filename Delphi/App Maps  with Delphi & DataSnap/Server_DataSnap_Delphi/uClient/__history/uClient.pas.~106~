@@ -1,0 +1,134 @@
+unit uClient;
+
+interface
+
+uses System.SysUtils, FireDAC.Comp.Client, System.Json, System.Classes, Data.DB;
+
+type
+  TClient = class
+  private
+    FUserID: Integer;
+    FUserName: String;
+    FUserEmail: String;
+    FUserPassword: String;
+    FConnection: TFDConnection;
+    FDQuery: TFDQuery;
+
+
+  public
+    property UserID: Integer read FUserID write FUserID;
+    property UserName: String read FUserName write FUserName;
+    property UserEmail: String read FUserEmail write FUserEmail;
+    property UserPassword: String read FUserPassword write FUserPassword;
+
+    property Connection: TFDConnection read FConnection;
+
+    function LoadUser(iUserID: Integer = 0): TFDQuery;
+    function AddNewUser(Name, Email, PassWord: String): TFDQuery;
+    function SearchUser(sName, sPassword: String): TFDQuery;
+
+
+    constructor Create(Connection: TFDConnection);
+    destructor Destroy;
+end;
+
+
+implementation
+
+uses ServerMethods,uConnectionDB;
+
+const
+  INSERT_USER: String = 'INSERT INTO `client`(`name`, `email`, `password`) ' +
+                        'VALUES (:NAME,:EMAIL,:PASSWORD)';
+
+{ TClient }
+
+function TClient.AddNewUser(Name, Email, PassWord: String): TFDQuery;
+begin
+  FDQuery := nil;
+  Result := FDQuery;
+  try
+    FDQuery.SQL.Add(INSERT_USER);
+    FDQuery.ParamByName('NAME').AsString := Name;
+    FDQuery.ParamByName('EMAIL').AsString := Email;
+    FDQuery.ParamByName('PASSWORD').AsString := PassWord;
+    FDQuery.ExecSQL;
+
+    FDQuery.Close;
+    FDQuery.SQL.Clear;
+    FDQuery.Open('SELECT ID FROM `client` ORDER BY ID DESC LIMIT 1');
+
+    Result := FDQuery;
+
+  except
+    on e: exception do
+      raise Exception.Create('TClient.AddNewUser:' + e.Message);
+  end;
+end;
+
+constructor TClient.Create(Connection: TFDConnection);
+begin
+  FConnection := Connection;
+  FDQuery := TFDQuery.Create(nil);
+  FDQuery.Connection := FConnection;
+end;
+
+destructor TClient.Destroy;
+begin
+  FreeAndNil(FConnection);
+end;
+
+
+function TClient.LoadUser(iUserID: Integer = 0): TFDQuery;
+
+begin
+  FDQuery := nil;
+  Result := FDQuery;
+  try
+    if iUserID > 0 then
+    begin
+      FUserID := iUserID;
+
+      FDQuery.Close;
+      FDQuery.SQL.Clear;
+      FDQuery.SQL.Add('SELECT * FROM CLIENT');
+      FDQuery.SQL.Add('WHERE ID = ' + IntToStr(iUserID));
+
+      FDQuery.Open;
+
+      if not FDQuery.IsEmpty then
+      begin
+        FUserName    := FDQuery.FieldByName('NAME').AsString;
+        FUserEmail   := FDQuery.FieldByName('EMAIL').AsString;
+        FUserPassword:= FDQuery.FieldByName('PASSWORD').AsString;
+      end;
+
+      Result := FDQuery;
+    end;
+  except
+    on e: exception do
+      raise Exception.Create('TClient.LoadUser:' + e.Message);
+  end;
+end;
+
+function TClient.SearchUser(sName, sPassword: String): TFDQuery;
+begin
+  FDQuery := nil;
+  Result := FDQuery;
+  try
+    FDQuery.Close;
+    FDQuery.SQL.Clear;
+    FDQuery.SQL.Add('SELECT * FROM CLIENT WHERE NAME = :NAME and password = :password');
+    FDQuery.ParamByName('NAME').AsString := Trim(sName);
+    FDQuery.ParamByName('PASSWORD').AsString := Trim(sPassword);
+    FDQuery.Open;
+
+    Result :=  FDQuery;
+  except
+    on e: exception do
+      raise Exception.Create('TClient.SearchUser:' + e.Message);
+  end;
+end;
+
+
+end.

@@ -1,0 +1,58 @@
+object ServerMethods1: TServerMethods1
+  OldCreateOrder = False
+  Height = 244
+  Width = 480
+  object Connection: TFDConnection
+    Params.Strings = (
+      'Database=test'
+      'User_Name=localhost'
+      'Server=localhost'
+      'DriverID=MySQL')
+    Connected = True
+    LoginPrompt = False
+    Left = 64
+    Top = 32
+  end
+  object Driver: TFDPhysMySQLDriverLink
+    VendorLib = 
+      'C:\Users\Luiz Felipe Campos\Documents\B4IT_Branch\b4sig_shared\S' +
+      'ourceShared\libmysql.dll'
+    Left = 64
+    Top = 112
+  end
+  object JsonLink: TFDStanStorageJSONLink
+    Left = 64
+    Top = 184
+  end
+  object qryClient: TFDTable
+    IndexFieldNames = 'ID'
+    Connection = Connection
+    UpdateOptions.UpdateTableName = 'test.client'
+    TableName = 'test.client'
+    Left = 160
+    Top = 32
+    object qryClientID: TFDAutoIncField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ReadOnly = True
+    end
+    object orderClientname: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'name'
+      Origin = '`name`'
+      Size = 100
+    end
+    object orderClientemail: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'email'
+      Origin = 'email'
+      Size = 100
+    end
+    object orderClientpassword: TStringField
+      FieldName = 'password'
+      Origin = '`password`'
+      Required = True
+      Size = 100
+    end
+  end
+end

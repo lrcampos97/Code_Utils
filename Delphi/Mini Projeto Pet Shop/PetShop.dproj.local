@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/09/14 02:06:49.000.711,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/09/14 21:56:24.000.226,=C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/09/14 21:58:18.000.047,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Login\uLogin.pas</Transaction>
+    <Transaction>2016/09/14 21:58:34.000.348,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Login\dmLogin.pas</Transaction>
+    <Transaction>2016/09/14 21:58:50.000.104,C:\Users\Luiz Felipe Campos\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\PetShop.dproj</Transaction>
+    <Transaction>2016/09/14 21:59:23.000.160,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit Usuario\uUsuario.pas</Transaction>
+    <Transaction>2016/09/14 21:59:31.000.640,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\formSuporte\uSuporte.pas</Transaction>
+    <Transaction>2016/09/14 21:59:43.000.054,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\dmBase\UdmBase.pas</Transaction>
+    <Transaction>2016/09/14 22:05:12.000.479,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit Usuario\uUsuario.pas=</Transaction>
+    <Transaction>2016/09/16 19:09:03.000.672,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\CadPadrao\cadPadrao.pas</Transaction>
+    <Transaction>2016/09/16 19:17:38.000.713,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\CadPadrao\cadPadrao.pas=</Transaction>
+    <Transaction>2016/09/17 15:55:40.000.158,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/09/17 16:03:40.000.839,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.dfm=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\CadPadrao\CadPadrao.dfm</Transaction>
+    <Transaction>2016/09/17 16:03:40.000.839,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.pas=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\CadPadrao\CadPadrao.pas</Transaction>
+    <Transaction>2016/09/17 16:17:06.000.594,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/09/17 16:28:02.000.260,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Frames\freTitulo.pas=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/09/17 16:28:02.000.260,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Frames\freTitulo.dfm=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.dfm</Transaction>
+    <Transaction>2016/09/17 16:31:53.000.822,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/09/17 16:33:38.000.052,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Frames\frePesquisa.dfm=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.dfm</Transaction>
+    <Transaction>2016/09/17 16:33:38.000.052,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Frames\frePesquisa.pas=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/09/18 22:15:57.000.388,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/09/18 22:33:37.000.377,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Frames\freButtons.pas=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/09/18 22:33:37.000.377,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Frames\freButtons.dfm=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.dfm</Transaction>
+    <Transaction>2016/09/22 18:11:25.000.188,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/09/22 18:12:19.000.364,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Formulario Principal\formPrincipal.dfm=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.dfm</Transaction>
+    <Transaction>2016/09/22 18:12:19.000.364,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Formulario Principal\formPrincipal.pas=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/11/18 00:36:32.000.625,=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/11/18 00:41:47.000.203,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\CadCliente\CadCliente.dfm=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.dfm</Transaction>
+    <Transaction>2016/11/18 00:41:47.000.203,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\CadCliente\CadCliente.pas=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/11/18 00:47:38.000.640,C:\Users\Luiz Felipe Campos\Desktop\Luiz\Pet Shop Management\CadCliente\CadCliente.pas=</Transaction>
+    <Transaction>2016/11/21 02:06:08.000.284,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/11/21 02:22:30.000.354,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit1.pas=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Usuario\uUsuario.pas</Transaction>
+    <Transaction>2016/11/25 20:44:04.000.610,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Frames\freTitulo.pas=</Transaction>
+    <Transaction>2016/11/25 20:46:11.000.957,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/11/26 10:57:36.000.028,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Frames\freTitulo.pas=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/11/26 10:57:36.000.028,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Frames\freTitulo.dfm=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit1.dfm</Transaction>
+    <Transaction>2016/11/26 11:05:49.000.425,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit2.pas</Transaction>
+    <Transaction>2016/11/26 11:06:55.000.065,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Frames\freTitulo.pas=</Transaction>
+    <Transaction>2016/11/26 11:09:35.000.415,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/11/26 11:15:29.000.314,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/11/26 11:18:10.000.279,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Frames\freTitulo.pas=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/11/26 11:18:10.000.279,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Frames\freTitulo.dfm=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit1.dfm</Transaction>
+    <Transaction>2016/11/26 11:18:43.000.342,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit2.pas</Transaction>
+    <Transaction>2016/11/26 11:21:19.000.707,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Frames\freTitulo.dfm=</Transaction>
+    <Transaction>2016/11/26 11:21:43.000.616,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Frames\freTitulo.pas=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit2.pas</Transaction>
+    <Transaction>2016/11/26 11:21:43.000.617,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Frames\freTitulo.dfm=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit2.dfm</Transaction>
+    <Transaction>2016/11/26 11:25:37.000.636,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/11/26 11:39:30.000.413,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit1.pas=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Adicionais\uTypes.pas</Transaction>
+    <Transaction>2016/11/26 14:30:05.000.585,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit1.pas</Transaction>
+    <Transaction>2016/11/26 14:31:33.000.457,C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Unit1.pas=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\Adicionais\uUtils.pas</Transaction>
+    <Transaction>2017/01/11 19:47:22.000.570,=C:\Users\Luiz Felipe Campos\Dropbox\Pet Shop Management\PetShop.todo</Transaction>
+  </Transactions>
+</BorlandProject>

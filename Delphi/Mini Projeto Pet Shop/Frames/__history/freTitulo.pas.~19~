@@ -1,0 +1,64 @@
+unit freTitulo;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
+  uTypes;
+
+type
+  TFrame2 = class(TFrame)
+    pnlTitulo: TPanel;
+    lblTitulo: TLabel;
+    bvlStatus: TBevel;
+    lblState: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    var
+      CurrentState: TStatusTela;
+
+    procedure SetState(Status: TStatusTela);
+    procedure SetTitulo(sTitulo: String);
+
+  end;
+
+implementation
+
+{$R *.dfm}
+
+{ TFrame2 }
+
+procedure TFrame2.SetState(Status: TStatusTela);
+begin
+  CurrentState := Status;
+  if Status = stView then
+  begin
+    lblState.Caption := 'Visualização';
+    lblState.Left := 904;
+  end
+  else if Status = stSearch then
+  begin
+    lblState.Caption := 'Pesquisa';
+    lblState.Left := 917;
+  end
+  else if Status = stEdit then
+  begin
+    lblState.Caption := 'Edição';
+    lblState.Left := 923;
+  end
+  else if Status = stInclude then
+  begin
+    lblState.Caption := 'Inclusão';
+    lblState.Left := 921;
+  end;
+end;
+
+procedure TFrame2.SetTitulo(sTitulo: String);
+begin
+  lblTitulo.Caption := sTitulo;
+end;
+
+end.

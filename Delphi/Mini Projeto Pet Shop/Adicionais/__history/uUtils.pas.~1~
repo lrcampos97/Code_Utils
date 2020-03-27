@@ -1,0 +1,23 @@
+unit uUtils;
+
+interface
+
+type
+  TUtils = class
+    function iif(sCondition,vtrue,vfalse: Variant):Variant;
+  end;
+
+
+implementation
+
+{ TUtils }
+
+function TUtils.iif(sCondition, vtrue, vfalse: Variant): Variant;
+begin
+  if sCondition = true then
+    Result := vtrue
+  else
+    Result := vfalse;
+end;
+
+end.

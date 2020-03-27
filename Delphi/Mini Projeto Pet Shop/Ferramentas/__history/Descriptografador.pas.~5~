@@ -1,0 +1,99 @@
+unit Descriptografador;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.ExtCtrls,
+  Vcl.FileCtrl;
+
+
+
+type
+  TfrmCriptografador = class(TForm)
+    pnlPrincipal: TPanel;
+    GroupBox1: TGroupBox;
+    Label1: TLabel;
+    edtCliente: TEdit;
+    lblData: TLabel;
+    DateTimePicker1: TDateTimePicker;
+    Button1: TButton;
+    DirectoryListBox1: TDirectoryListBox;
+    lblCaminho: TLabel;
+    lblResultCaminho: TLabel;
+    GroupBox2: TGroupBox;
+    edtDescripto1: TEdit;
+    btn2: TButton;
+    Label2: TLabel;
+    Label3: TLabel;
+    lblResult: TLabel;
+    rdCripto: TRadioButton;
+    rdDescripto: TRadioButton;
+    procedure rdCriptoClick(Sender: TObject);
+    procedure rdDescriptoClick(Sender: TObject);
+    procedure btn2Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+    NumberArray: array[0..25] of integer;
+    LetterArray: array['A'..'Z'] of char;
+    function Descriptografar(sWord: String): String;
+    function Criptografar(sWord: String): String;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCriptografador: TfrmCriptografador;
+
+implementation
+
+{$R *.dfm}
+
+
+procedure TfrmCriptografador.btn2Click(Sender: TObject);
+begin
+   if edtDescripto1.Text = '' then
+    raise exception.Create('Informar um valor para ' + btn2.Caption);
+
+   if rdCripto.Checked then
+   begin
+    //CRIPTOGRAFAR
+
+   end
+   else
+   begin
+    //DESCRIPTOGRAFAR
+
+   end;
+
+end;
+
+function TfrmCriptografador.Criptografar(sWord: String): String;
+begin
+  //
+end;
+
+function TfrmCriptografador.Descriptografar(sWord: String): String;
+begin
+  //
+end;
+
+procedure TfrmCriptografador.FormShow(Sender: TObject);
+begin
+  btn2.Enabled := false;
+end;
+
+procedure TfrmCriptografador.rdCriptoClick(Sender: TObject);
+begin
+  btn2.Enabled := True;
+  btn2.Caption := 'Criptografar';
+end;
+
+procedure TfrmCriptografador.rdDescriptoClick(Sender: TObject);
+begin
+  btn2.Enabled := True;
+  btn2.Caption := 'Descriptografar';
+end;
+
+end.

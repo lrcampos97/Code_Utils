@@ -1,0 +1,23 @@
+program Cliente;
+
+uses
+  Vcl.Forms,
+  freButtons in '..\Frames\freButtons.pas' {freBotoes: TFrame},
+  frePesquisa in '..\Frames\frePesquisa.pas' {frePesquisar: TFrame},
+  freTitulo in '..\Frames\freTitulo.pas' {Frame2: TFrame},
+  uTypes in '..\Adicionais\uTypes.pas',
+  uUtils in '..\Adicionais\uUtils.pas',
+  CadPadrao in '..\CadPadrao\CadPadrao.pas' {frmPadrao},
+  frmCliente in 'frmCliente.pas' {frmClientes},
+  UdmBase in '..\dmBase\UdmBase.pas' {dmBase: TDataModule},
+  dmCliente in 'dmCliente.pas' {dmClientes: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmClientes, frmClientes);
+  Application.CreateForm(TdmBase, dmBase);
+  Application.Run;
+end.

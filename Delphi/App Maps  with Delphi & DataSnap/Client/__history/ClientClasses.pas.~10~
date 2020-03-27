@@ -1,0 +1,263 @@
+//
+// Created by the DataSnap proxy generator.
+// 14/10/2017 00:27:16
+//
+
+unit ClientClasses;
+
+interface
+
+uses System.JSON, Datasnap.DSProxyRest, Datasnap.DSClientRest, Data.DBXCommon, Data.DBXClient, Data.DBXDataSnap, Data.DBXJSON, Datasnap.DSProxy, System.Classes, System.SysUtils, Data.DB, Data.SqlExpr, Data.DBXDBReaders, Data.DBXCDSReaders, Data.FireDACJSONReflect, Data.DBXJSONReflect;
+
+type
+
+  IDSRestCachedTFDJSONDataSets = interface;
+
+  TServerMethods1Client = class(TDSAdminRestClient)
+  private
+    FDSServerModuleCreateCommand: TDSRestCommand;
+    FValidateUserCommand: TDSRestCommand;
+    FValidateUserCommand_Cache: TDSRestCommand;
+    FAddNewUserCommand: TDSRestCommand;
+    FLoadUserCommand: TDSRestCommand;
+    FLoadUserCommand_Cache: TDSRestCommand;
+    FDataSetToJSONCommand: TDSRestCommand;
+    FDataSetToJSONCommand_Cache: TDSRestCommand;
+  public
+    constructor Create(ARestConnection: TDSRestConnection); overload;
+    constructor Create(ARestConnection: TDSRestConnection; AInstanceOwner: Boolean); overload;
+    destructor Destroy; override;
+    procedure DSServerModuleCreate(Sender: TObject);
+    function ValidateUser(sName: string; sPassword: string; const ARequestFilter: string = ''): TJSONObject;
+    function ValidateUser_Cache(sName: string; sPassword: string; const ARequestFilter: string = ''): IDSRestCachedJSONObject;
+    function AddNewUser(Name: string; Email: string; PassWord: string; const ARequestFilter: string = ''): Boolean;
+    function LoadUser(iID: Integer; const ARequestFilter: string = ''): TFDJSONDataSets;
+    function LoadUser_Cache(iID: Integer; const ARequestFilter: string = ''): IDSRestCachedTFDJSONDataSets;
+    function DataSetToJSON(oDataSet: TDataSet; const ARequestFilter: string = ''): TJSONObject;
+    function DataSetToJSON_Cache(oDataSet: TDataSet; const ARequestFilter: string = ''): IDSRestCachedJSONObject;
+  end;
+
+  IDSRestCachedTFDJSONDataSets = interface(IDSRestCachedObject<TFDJSONDataSets>)
+  end;
+
+  TDSRestCachedTFDJSONDataSets = class(TDSRestCachedObject<TFDJSONDataSets>, IDSRestCachedTFDJSONDataSets, IDSRestCachedCommand)
+  end;
+
+const
+  TServerMethods1_DSServerModuleCreate: array [0..0] of TDSRestParameterMetaData =
+  (
+    (Name: 'Sender'; Direction: 1; DBXType: 37; TypeName: 'TObject')
+  );
+
+  TServerMethods1_ValidateUser: array [0..2] of TDSRestParameterMetaData =
+  (
+    (Name: 'sName'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'sPassword'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: ''; Direction: 4; DBXType: 37; TypeName: 'TJSONObject')
+  );
+
+  TServerMethods1_ValidateUser_Cache: array [0..2] of TDSRestParameterMetaData =
+  (
+    (Name: 'sName'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'sPassword'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: ''; Direction: 4; DBXType: 26; TypeName: 'String')
+  );
+
+  TServerMethods1_AddNewUser: array [0..3] of TDSRestParameterMetaData =
+  (
+    (Name: 'Name'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'Email'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'PassWord'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: ''; Direction: 4; DBXType: 4; TypeName: 'Boolean')
+  );
+
+  TServerMethods1_LoadUser: array [0..1] of TDSRestParameterMetaData =
+  (
+    (Name: 'iID'; Direction: 1; DBXType: 6; TypeName: 'Integer'),
+    (Name: ''; Direction: 4; DBXType: 37; TypeName: 'TFDJSONDataSets')
+  );
+
+  TServerMethods1_LoadUser_Cache: array [0..1] of TDSRestParameterMetaData =
+  (
+    (Name: 'iID'; Direction: 1; DBXType: 6; TypeName: 'Integer'),
+    (Name: ''; Direction: 4; DBXType: 26; TypeName: 'String')
+  );
+
+  TServerMethods1_DataSetToJSON: array [0..1] of TDSRestParameterMetaData =
+  (
+    (Name: 'oDataSet'; Direction: 1; DBXType: 23; TypeName: 'TDataSet'),
+    (Name: ''; Direction: 4; DBXType: 37; TypeName: 'TJSONObject')
+  );
+
+  TServerMethods1_DataSetToJSON_Cache: array [0..1] of TDSRestParameterMetaData =
+  (
+    (Name: 'oDataSet'; Direction: 1; DBXType: 23; TypeName: 'TDataSet'),
+    (Name: ''; Direction: 4; DBXType: 26; TypeName: 'String')
+  );
+
+implementation
+
+procedure TServerMethods1Client.DSServerModuleCreate(Sender: TObject);
+begin
+  if FDSServerModuleCreateCommand = nil then
+  begin
+    FDSServerModuleCreateCommand := FConnection.CreateCommand;
+    FDSServerModuleCreateCommand.RequestType := 'POST';
+    FDSServerModuleCreateCommand.Text := 'TServerMethods1."DSServerModuleCreate"';
+    FDSServerModuleCreateCommand.Prepare(TServerMethods1_DSServerModuleCreate);
+  end;
+  if not Assigned(Sender) then
+    FDSServerModuleCreateCommand.Parameters[0].Value.SetNull
+  else
+  begin
+    FMarshal := TDSRestCommand(FDSServerModuleCreateCommand.Parameters[0].ConnectionHandler).GetJSONMarshaler;
+    try
+      FDSServerModuleCreateCommand.Parameters[0].Value.SetJSONValue(FMarshal.Marshal(Sender), True);
+      if FInstanceOwner then
+        Sender.Free
+    finally
+      FreeAndNil(FMarshal)
+    end
+    end;
+  FDSServerModuleCreateCommand.Execute;
+end;
+
+function TServerMethods1Client.ValidateUser(sName: string; sPassword: string; const ARequestFilter: string): TJSONObject;
+begin
+  if FValidateUserCommand = nil then
+  begin
+    FValidateUserCommand := FConnection.CreateCommand;
+    FValidateUserCommand.RequestType := 'GET';
+    FValidateUserCommand.Text := 'TServerMethods1.ValidateUser';
+    FValidateUserCommand.Prepare(TServerMethods1_ValidateUser);
+  end;
+  FValidateUserCommand.Parameters[0].Value.SetWideString(sName);
+  FValidateUserCommand.Parameters[1].Value.SetWideString(sPassword);
+  FValidateUserCommand.Execute(ARequestFilter);
+  Result := TJSONObject(FValidateUserCommand.Parameters[2].Value.GetJSONValue(FInstanceOwner));
+end;
+
+function TServerMethods1Client.ValidateUser_Cache(sName: string; sPassword: string; const ARequestFilter: string): IDSRestCachedJSONObject;
+begin
+  if FValidateUserCommand_Cache = nil then
+  begin
+    FValidateUserCommand_Cache := FConnection.CreateCommand;
+    FValidateUserCommand_Cache.RequestType := 'GET';
+    FValidateUserCommand_Cache.Text := 'TServerMethods1.ValidateUser';
+    FValidateUserCommand_Cache.Prepare(TServerMethods1_ValidateUser_Cache);
+  end;
+  FValidateUserCommand_Cache.Parameters[0].Value.SetWideString(sName);
+  FValidateUserCommand_Cache.Parameters[1].Value.SetWideString(sPassword);
+  FValidateUserCommand_Cache.ExecuteCache(ARequestFilter);
+  Result := TDSRestCachedJSONObject.Create(FValidateUserCommand_Cache.Parameters[2].Value.GetString);
+end;
+
+function TServerMethods1Client.AddNewUser(Name: string; Email: string; PassWord: string; const ARequestFilter: string): Boolean;
+begin
+  if FAddNewUserCommand = nil then
+  begin
+    FAddNewUserCommand := FConnection.CreateCommand;
+    FAddNewUserCommand.RequestType := 'GET';
+    FAddNewUserCommand.Text := 'TServerMethods1.AddNewUser';
+    FAddNewUserCommand.Prepare(TServerMethods1_AddNewUser);
+  end;
+  FAddNewUserCommand.Parameters[0].Value.SetWideString(Name);
+  FAddNewUserCommand.Parameters[1].Value.SetWideString(Email);
+  FAddNewUserCommand.Parameters[2].Value.SetWideString(PassWord);
+  FAddNewUserCommand.Execute(ARequestFilter);
+  Result := FAddNewUserCommand.Parameters[3].Value.GetBoolean;
+end;
+
+function TServerMethods1Client.LoadUser(iID: Integer; const ARequestFilter: string): TFDJSONDataSets;
+begin
+  if FLoadUserCommand = nil then
+  begin
+    FLoadUserCommand := FConnection.CreateCommand;
+    FLoadUserCommand.RequestType := 'GET';
+    FLoadUserCommand.Text := 'TServerMethods1.LoadUser';
+    FLoadUserCommand.Prepare(TServerMethods1_LoadUser);
+  end;
+  FLoadUserCommand.Parameters[0].Value.SetInt32(iID);
+  FLoadUserCommand.Execute(ARequestFilter);
+  if not FLoadUserCommand.Parameters[1].Value.IsNull then
+  begin
+    FUnMarshal := TDSRestCommand(FLoadUserCommand.Parameters[1].ConnectionHandler).GetJSONUnMarshaler;
+    try
+      Result := TFDJSONDataSets(FUnMarshal.UnMarshal(FLoadUserCommand.Parameters[1].Value.GetJSONValue(True)));
+      if FInstanceOwner then
+        FLoadUserCommand.FreeOnExecute(Result);
+    finally
+      FreeAndNil(FUnMarshal)
+    end
+  end
+  else
+    Result := nil;
+end;
+
+function TServerMethods1Client.LoadUser_Cache(iID: Integer; const ARequestFilter: string): IDSRestCachedTFDJSONDataSets;
+begin
+  if FLoadUserCommand_Cache = nil then
+  begin
+    FLoadUserCommand_Cache := FConnection.CreateCommand;
+    FLoadUserCommand_Cache.RequestType := 'GET';
+    FLoadUserCommand_Cache.Text := 'TServerMethods1.LoadUser';
+    FLoadUserCommand_Cache.Prepare(TServerMethods1_LoadUser_Cache);
+  end;
+  FLoadUserCommand_Cache.Parameters[0].Value.SetInt32(iID);
+  FLoadUserCommand_Cache.ExecuteCache(ARequestFilter);
+  Result := TDSRestCachedTFDJSONDataSets.Create(FLoadUserCommand_Cache.Parameters[1].Value.GetString);
+end;
+
+function TServerMethods1Client.DataSetToJSON(oDataSet: TDataSet; const ARequestFilter: string): TJSONObject;
+begin
+  if FDataSetToJSONCommand = nil then
+  begin
+    FDataSetToJSONCommand := FConnection.CreateCommand;
+    FDataSetToJSONCommand.RequestType := 'POST';
+    FDataSetToJSONCommand.Text := 'TServerMethods1."DataSetToJSON"';
+    FDataSetToJSONCommand.Prepare(TServerMethods1_DataSetToJSON);
+  end;
+  FDataSetToJSONCommand.Parameters[0].Value.SetDBXReader(TDBXDataSetReader.Create(oDataSet, FInstanceOwner), True);
+  FDataSetToJSONCommand.Execute(ARequestFilter);
+  Result := TJSONObject(FDataSetToJSONCommand.Parameters[1].Value.GetJSONValue(FInstanceOwner));
+end;
+
+function TServerMethods1Client.DataSetToJSON_Cache(oDataSet: TDataSet; const ARequestFilter: string): IDSRestCachedJSONObject;
+begin
+  if FDataSetToJSONCommand_Cache = nil then
+  begin
+    FDataSetToJSONCommand_Cache := FConnection.CreateCommand;
+    FDataSetToJSONCommand_Cache.RequestType := 'POST';
+    FDataSetToJSONCommand_Cache.Text := 'TServerMethods1."DataSetToJSON"';
+    FDataSetToJSONCommand_Cache.Prepare(TServerMethods1_DataSetToJSON_Cache);
+  end;
+  FDataSetToJSONCommand_Cache.Parameters[0].Value.SetDBXReader(TDBXDataSetReader.Create(oDataSet, FInstanceOwner), True);
+  FDataSetToJSONCommand_Cache.ExecuteCache(ARequestFilter);
+  Result := TDSRestCachedJSONObject.Create(FDataSetToJSONCommand_Cache.Parameters[1].Value.GetString);
+end;
+
+constructor TServerMethods1Client.Create(ARestConnection: TDSRestConnection);
+begin
+  inherited Create(ARestConnection);
+end;
+
+constructor TServerMethods1Client.Create(ARestConnection: TDSRestConnection; AInstanceOwner: Boolean);
+begin
+  inherited Create(ARestConnection, AInstanceOwner);
+end;
+
+destructor TServerMethods1Client.Destroy;
+begin
+  FDSServerModuleCreateCommand.DisposeOf;
+  FValidateUserCommand.DisposeOf;
+  FValidateUserCommand_Cache.DisposeOf;
+  FAddNewUserCommand.DisposeOf;
+  FLoadUserCommand.DisposeOf;
+  FLoadUserCommand_Cache.DisposeOf;
+  FDataSetToJSONCommand.DisposeOf;
+  FDataSetToJSONCommand_Cache.DisposeOf;
+  inherited;
+end;
+
+end.
+

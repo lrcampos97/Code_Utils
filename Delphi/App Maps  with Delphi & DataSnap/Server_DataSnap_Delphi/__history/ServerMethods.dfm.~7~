@@ -1,0 +1,17 @@
+object ServerMethods1: TServerMethods1
+  OldCreateOrder = False
+  OnCreate = DSServerModuleCreate
+  Height = 244
+  Width = 480
+  object Driver: TFDPhysMySQLDriverLink
+    VendorLib = 
+      'C:\Users\Luiz Felipe Campos\Documents\B4IT_Branch\b4sig_shared\S' +
+      'ourceShared\libmysql.dll'
+    Left = 64
+    Top = 112
+  end
+  object JsonLink: TFDStanStorageJSONLink
+    Left = 64
+    Top = 184
+  end
+end

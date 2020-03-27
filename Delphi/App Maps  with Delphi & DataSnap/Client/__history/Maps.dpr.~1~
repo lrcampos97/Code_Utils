@@ -1,0 +1,14 @@
+program Maps;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  Main in 'Main.pas' {frmApp};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TfrmApp, frmApp);
+  Application.Run;
+end.

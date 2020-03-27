@@ -1,0 +1,149 @@
+unit uClient;
+
+interface
+
+uses System.SysUtils, FireDAC.Comp.Client, System.Json, System.Classes, Data.DB;
+
+type
+  TClient = class
+  private
+    FUserID: Integer;
+    FUserName: String;
+    FUserEmail: String;
+    FUserPassword: String;
+    FConnection: TFDConnection;
+
+
+  public
+    property UserID: Integer read FUserID write FUserID;
+    property UserName: String read FUserName write FUserName;
+    property UserEmail: String read FUserEmail write FUserEmail;
+    property UserPassword: String read FUserPassword write FUserPassword;
+
+    property Connection: TFDConnection read FConnection;
+
+    function LoadUser(iUserID: Integer = 0): TFDQuery;
+    function AddNewUser(Name, Email, PassWord: String): TFDQuery;
+    function SearchUser(sName, sPassword: String): TFDQuery;
+
+
+    constructor Create(Connection: TFDConnection);
+    destructor Destroy;
+end;
+
+
+implementation
+
+uses ServerMethods,uConnectionDB;
+
+const
+  INSERT_USER: String = 'INSERT INTO `client`(`name`, `email`, `password`) ' +
+                        'VALUES (:NAME,:EMAIL,:PASSWORD)';
+
+{ TClient }
+
+function TClient.AddNewUser(Name, Email, PassWord: String): TFDQuery;
+var
+  qryAux: TFDQuery;
+begin
+  Result:= Nil;
+  try
+    qryAux := TFDQuery.Create(nil);
+    try
+      qryAux.Connection := FConnection;
+      qryAux.SQL.Add(INSERT_USER);
+      qryAux.ParamByName('NAME').AsString := Name;
+      qryAux.ParamByName('EMAIL').AsString := Email;
+      qryAux.ParamByName('PASSWORD').AsString := PassWord;
+      qryAux.ExecSQL;
+
+      qryaux.Close;
+      qryaux.SQL.Clear;
+      qryaux.Open('SELECT ID FROM `client` ORDER BY ID DESC LIMIT 1');
+
+      Result := qryaux;
+
+    finally
+      //FreeAndNil(qryAux);
+    end;
+  except
+    on e: exception do
+      raise Exception.Create('TClient.AddNewUser:' + e.Message);
+  end;
+end;
+
+constructor TClient.Create(Connection: TFDConnection);
+begin
+  FConnection := Connection;
+end;
+
+destructor TClient.Destroy;
+begin
+  FreeAndNil(FConnection);
+end;
+
+
+function TClient.LoadUser(iUserID: Integer = 0): TFDQuery;
+var
+  qryAux: TFDQuery;
+begin
+  Result:= qryAux;
+  try
+    if iUserID > 0 then
+    begin
+      FUserID := iUserID;
+
+      qryAux := TFDQuery.Create(qryAux);
+      try
+        qryAux.Connection := FConnection;
+        qryAux.SQL.Add('SELECT * FROM CLIENT');
+        qryAux.SQL.Add('WHERE ID = ' + IntToStr(iUserID));
+
+        qryAux.Open;
+
+        if not qryAux.IsEmpty then
+        begin
+          FUserName    := qryAux.FieldByName('NAME').AsString;
+          FUserEmail   := qryAux.FieldByName('EMAIL').AsString;
+          FUserPassword:= qryAux.FieldByName('PASSWORD').AsString;
+        end;
+
+        Result := qryAux;
+      finally
+       // FreeAndNil(qryAux);
+      end;
+    end;
+  except
+    on e: exception do
+      raise Exception.Create('TClient.LoadUser:' + e.Message);
+  end;
+end;
+
+function TClient.SearchUser(sName, sPassword: String): TFDQuery;
+var
+  qryAux: TFDQuery;
+begin
+  Result:= nil;
+  try
+    qryAux := TFDQuery.Create(nil);
+    try
+      qryAux.Close;
+      qryAux.Connection := FConnection;
+      qryAux.SQL.Add('SELECT * FROM CLIENT WHERE NAME = :NAME and password = :password');
+      qryAux.ParamByName('NAME').AsString := Trim(sName);
+      qryAux.ParamByName('PASSWORD').AsString := Trim(sPassword);
+      qryAux.Open;
+
+      Result :=  qryAux;
+    finally
+     // FreeAndNil(qryAux);
+    end;
+
+  except
+    on e: exception do
+      raise Exception.Create('TClient.SearchUser:' + e.Message);
+  end;
+end;
+
+
+end.

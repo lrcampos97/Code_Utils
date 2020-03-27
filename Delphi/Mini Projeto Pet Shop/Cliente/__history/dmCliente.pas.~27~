@@ -1,0 +1,79 @@
+unit dmCliente;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, UdmBase;
+
+type
+  TdmClientes = class(TDataModule)
+    dsConsultaCliente: TDataSource;
+    QryConsultaCliente: TFDQuery;
+    tblCliente: TFDTable;
+    tblClienteCODIGOCLIENTE: TIntegerField;
+    tblClienteCODIGOPESSOA: TIntegerField;
+    tblClienteCODIGOUSUARIO: TIntegerField;
+    tblClienteDATAATUALIZACAO: TSQLTimeStampField;
+    tblClienteFIDELIDADE: TBCDField;
+    tblClienteLIMITECREDITO: TBCDField;
+    tblClienteUTILIZALIMITECRED: TIntegerField;
+    tblClienteVALORPENDENTE: TBCDField;
+    tblClienteULTIMACOMPRA: TSQLTimeStampField;
+    tblClienteINATIVO: TIntegerField;
+    tblClienteOBSERVACOES: TStringField;
+    dsCliente: TDataSource;
+    tblPessoa: TFDTable;
+    tblPessoaCODIGOPESSOA: TIntegerField;
+    tblPessoaCODIGOENDERECO: TIntegerField;
+    tblPessoaCODIGOUSUARIO: TIntegerField;
+    tblPessoaNOME: TStringField;
+    tblPessoaRAZAOSOCIAL: TStringField;
+    tblPessoaTIPOPESSOA: TStringField;
+    tblPessoaCPFCNPJ: TStringField;
+    tblPessoaRG: TStringField;
+    tblPessoaSEXO: TStringField;
+    tblPessoaIDADE: TIntegerField;
+    tblPessoaTELEFONEPRINCIPAL: TStringField;
+    tblPessoaTELEFONEOPCIONAL1: TStringField;
+    tblPessoaTELEFONEOPCIONAL2: TStringField;
+    tblPessoaDATACADASTRO: TDateField;
+    tblPessoaEMAIL: TStringField;
+    tblPessoaFOTOPESSOA: TBlobField;
+    tblPessoaDATANASCIMENTO: TSQLTimeStampField;
+    dsPessoa: TDataSource;
+    tblEndereco: TFDTable;
+    dsEndereco: TDataSource;
+    tblEnderecoCODIGOENDERECO: TIntegerField;
+    tblEnderecoCODIGOPESSOA: TIntegerField;
+    tblEnderecoCODIGOUF: TIntegerField;
+    tblEnderecoCODIGOMUNICIPIO: TIntegerField;
+    tblEnderecoLOGRADOURO: TStringField;
+    tblEnderecoNUMERO: TStringField;
+    tblEnderecoBAIRRO: TStringField;
+    tblEnderecoCOMPLEMENTO: TStringField;
+    tblEnderecoCEP: TStringField;
+    tblMunicipio: TFDTable;
+    dsMunicipio: TDataSource;
+    tblMunicipioCODIGOMUNICIPIO: TIntegerField;
+    tblMunicipioNOME: TStringField;
+    tblMunicipioCODIGOUF: TIntegerField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dmClientes: TdmClientes;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.
+

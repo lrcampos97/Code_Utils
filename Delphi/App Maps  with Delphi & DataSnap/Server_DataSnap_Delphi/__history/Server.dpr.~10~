@@ -1,0 +1,28 @@
+program Server;
+{$APPTYPE GUI}
+
+
+uses
+  Vcl.Forms,
+  Web.WebReq,
+  IdHTTPWebBrokerBridge,
+  frmServer in 'frmServer.pas' {Form1},
+  ServerMethods in 'ServerMethods.pas' {ServerMethods1: TDSServerModule},
+  WebModule in 'WebModule.pas' {WebModule1: TWebModule},
+  uClient in 'uClient\uClient.pas',
+  uConnectionDB in 'uConnectionDB\uConnectionDB.pas';
+
+{$R *.res}
+
+var
+  ConnectionDB: TConnectionDB;
+
+begin
+  if WebRequestHandler <> nil then
+    WebRequestHandler.WebModuleClass := WebModuleClass;
+
+  ConnectionDB.Create;
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

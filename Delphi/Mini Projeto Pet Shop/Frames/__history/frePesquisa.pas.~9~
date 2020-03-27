@@ -1,0 +1,42 @@
+unit frePesquisa;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.StdCtrls,
+  Vcl.ExtCtrls;
+
+type
+  TfrePesquisar = class(TFrame)
+    pnlPesquisa: TPanel;
+    cbCriterios: TComboBox;
+    lblPesquisar: TLabel;
+    Label1: TLabel;
+    lblQtdRegistros: TLabel;
+    lblRegistros: TLabel;
+    btnPesquisar: TSpeedButton;
+    edtPesquisar: TEdit;
+    cbPesquisar: TComboBox;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure CBTipoNumerico;
+  end;
+
+implementation
+
+{$R *.dfm}
+
+{ TfrePesquisar }
+
+procedure TfrePesquisar.CBTipoNumerico;
+begin
+  cbCriterios.Items.Text :=
+  'Igual' + #13 +
+  'Maior' + #13 +
+  'Menor';
+end;
+
+end.

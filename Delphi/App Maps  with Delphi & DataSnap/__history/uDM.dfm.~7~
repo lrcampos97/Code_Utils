@@ -1,0 +1,26 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 131
+  Width = 413
+  object Connection: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\Luiz Felipe Campos\Desktop\Luiz\Projetos Mobil' +
+        'e\AppMaps\DB\banco.db3'
+      'LockingMode=Normal'
+      'DriverID=SQLite')
+    LoginPrompt = False
+    BeforeConnect = ConnectionBeforeConnect
+    Left = 72
+    Top = 56
+  end
+  object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
+    Left = 184
+    Top = 56
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'FMX'
+    Left = 320
+    Top = 56
+  end
+end

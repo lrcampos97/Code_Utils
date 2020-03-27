@@ -1,0 +1,103 @@
+object dmBase: TdmBase
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 137
+  Width = 395
+  object Connection: TFDConnection
+    Params.Strings = (
+      'Database='
+      'Server='
+      'User_Name='
+      'ConnectionDef=MSSQL_Demo')
+    TxOptions.AutoStop = False
+    LoginPrompt = False
+    Left = 24
+    Top = 16
+  end
+  object Transaction: TFDTransaction
+    Options.AutoStop = False
+    Connection = Connection
+    Left = 96
+    Top = 16
+  end
+  object tblMunicipio: TFDTable
+    IndexFieldNames = 'CODIGOUF'
+    Connection = Connection
+    Transaction = Transaction
+    UpdateOptions.UpdateTableName = 'PetShop_Homologacao..MUNICIPIO'
+    TableName = 'PetShop_Homologacao..MUNICIPIO'
+    Left = 328
+    Top = 16
+    object tblMunicipioCODIGOMUNICIPIO: TIntegerField
+      FieldName = 'CODIGOMUNICIPIO'
+      Origin = 'CODIGOMUNICIPIO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object tblMunicipioNOME: TStringField
+      FieldName = 'NOME'
+      Origin = 'NOME'
+      Required = True
+      Size = 80
+    end
+    object tblMunicipioCODIGOUF: TIntegerField
+      FieldName = 'CODIGOUF'
+      Origin = 'CODIGOUF'
+      Required = True
+    end
+  end
+  object dsMunicipio: TDataSource
+    DataSet = tblMunicipio
+    Left = 328
+    Top = 72
+  end
+  object dsUF: TDataSource
+    DataSet = tblUF
+    Left = 256
+    Top = 72
+  end
+  object tblUF: TFDTable
+    IndexFieldNames = 'CODIGOUF'
+    Connection = Connection
+    Transaction = Transaction
+    UpdateOptions.UpdateTableName = 'PetShop_Homologacao..UF'
+    TableName = 'PetShop_Homologacao..UF'
+    Left = 256
+    Top = 16
+    object tblCODIGOUF: TIntegerField
+      FieldName = 'CODIGOUF'
+      Origin = 'CODIGOUF'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object tblUFNOME: TStringField
+      FieldName = 'NOME'
+      Origin = 'NOME'
+      Required = True
+      Size = 80
+    end
+    object tblUFSIGLA: TStringField
+      FieldName = 'SIGLA'
+      Origin = 'SIGLA'
+      Required = True
+      FixedChar = True
+      Size = 2
+    end
+  end
+  object fdqryVerificaLicenca: TFDQuery
+    Connection = Connection
+    SQL.Strings = (
+      'DECLARE @RESULT INT'
+      ''
+      'EXEC @RESULT = dbo.FC_VERIFICALICENCAEXPIRADA :CODIGOEMPRESA'
+      ''
+      'SELECT '#39'Resultado'#39' = @RESULT')
+    Left = 184
+    Top = 16
+    ParamData = <
+      item
+        Name = 'CODIGOEMPRESA'
+        ParamType = ptInput
+      end>
+  end
+end

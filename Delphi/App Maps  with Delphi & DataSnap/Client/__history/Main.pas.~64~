@@ -1,0 +1,155 @@
+unit Main;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.TabControl,
+  FMX.StdCtrls, FMX.Objects, FMX.Edit, FMX.Layouts, FMX.Controls.Presentation,
+  FMX.ListBox, FMX.MultiView, System.json, Data.FireDACJSONReflect,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, FMX.Dialogs;
+
+type
+  TfrmApp = class(TForm)
+    tbcMain: TTabControl;
+    TabLogin: TTabItem;
+    TabRegister: TTabItem;
+    TabMain: TTabItem;
+    RtgLogin: TRectangle;
+    lbl3: TLabel;
+    Layout1: TLayout;
+    btnAcessar: TButton;
+    lbl1: TLabel;
+    edtUsuario: TEdit;
+    lbl2: TLabel;
+    edtSenha: TEdit;
+    img1: TImage;
+    RtgRegister: TRectangle;
+    Layout3: TLayout;
+    btnCreateAccount: TButton;
+    edtEmail: TEdit;
+    edtName: TEdit;
+    lbl5: TLabel;
+    lbl6: TLabel;
+    lbl7: TLabel;
+    edtPassword: TEdit;
+    tlb1: TToolBar;
+    lbl4: TLabel;
+    btn2: TSpeedButton;
+    Layout2: TLayout;
+    tlb2: TToolBar;
+    btnMenu: TSpeedButton;
+    MultiViewMain: TMultiView;
+    RtgMenu: TRectangle;
+    img2: TImage;
+    lblUserName: TLabel;
+    lstMain: TListBox;
+    ListBoxItem1: TListBoxItem;
+    ListBoxItem2: TListBoxItem;
+    ListBoxItem3: TListBoxItem;
+    ListBoxItem4: TListBoxItem;
+    StyleBook1: TStyleBook;
+    TFDMemClient: TFDMemTable;
+    btnExitAccount: TSpeedButton;
+    lbl8: TLabel;
+    procedure btnAcessarClick(Sender: TObject);
+    procedure btnCreateAccountClick(Sender: TObject);
+    procedure btnExitAccountClick(Sender: TObject);
+    procedure lbl3Click(Sender: TObject);
+    procedure btn2Click(Sender: TObject);
+  private
+    { Private declarations }
+    dsClient: TFDJSONDataSets;
+    procedure PreencheDadosUsuário;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmApp: TfrmApp;
+
+implementation
+
+uses ClientModule;
+
+{$R *.fmx}
+{$R *.NmXhdpiPh.fmx ANDROID}
+
+procedure TfrmApp.btnExitAccountClick(Sender: TObject);
+begin
+
+
+  TFDMemClient.EmptyDataSet;
+  MultiViewMain.HideMaster;
+  tbcMain.TabIndex := 0;
+end;
+
+procedure TfrmApp.lbl3Click(Sender: TObject);
+begin
+  tbcMain.TabIndex := 1;
+end;
+
+procedure TfrmApp.PreencheDadosUsuário;
+begin
+    lblUserName.Text := TFDMemClient.FieldValues['NAME'];
+end;
+
+procedure TfrmApp.btn2Click(Sender: TObject);
+begin
+  edtName.Text := '';
+  edtPassword.Text := '';
+  edtEmail.Text := '';
+  tbcMain.TabIndex := 0;
+end;
+
+procedure TfrmApp.btnAcessarClick(Sender: TObject);
+begin
+    // User Validate
+  if (Trim(edtUsuario.text) = '') then
+    raise Exception.Create('Necessário informar o usuário')
+  else if (Trim(edtSenha.Text) = '') then
+    raise Exception.Create('Necessário informar a senha');
+
+  dsClient := ClientModule1.ServerMethods1Client.SearchUser(Trim(edtUsuario.text),Trim(edtSenha.Text));
+  TFDMemClient.AppendData(TFDJSONDataSetsReader.GetListValue(dsClient,0));
+
+  if TFDMemClient.RecordCount > 0 then
+    tbcMain.TabIndex := 2
+  else
+     raise Exception.Create('Usuário ou Senha incorretos');
+
+  edtUsuario.Text := '';
+  edtSenha.Text := '';
+
+  PreencheDadosUsuário;
+end;
+
+procedure TfrmApp.btnCreateAccountClick(Sender: TObject);
+begin
+  if edtName.Text = '' then
+    raise Exception.Create('Informe o nome');
+
+  if edtemail.Text = '' then
+    raise Exception.Create('Informe o email');
+
+  if edtPassword.Text = '' then
+    raise Exception.Create('Informe a senha');
+
+  dsClient := ClientModule1.ServerMethods1Client.AddNewUser(edtName.Text,edtEmail.Text,edtPassword.Text);
+  TFDMemClient.AppendData(TFDJSONDataSetsReader.GetListValue(dsClient,0));
+
+  // Insere novo usuário...
+  if TFDMemClient.RecordCount > 0 then
+  begin
+    ShowMessage('Usuário cadastrado com sucesso!');
+    tbcMain.TabIndex := 2;
+
+    PreencheDadosUsuário;
+  end
+  else
+    raise Exception.Create('Ocorreu um problema ao cadastrar o usuário.');
+end;
+
+end.

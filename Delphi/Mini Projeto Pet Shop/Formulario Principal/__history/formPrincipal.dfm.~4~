@@ -1,0 +1,24 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Principal'
+  ClientHeight = 300
+  ClientWidth = 493
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PopupMenu1: TPopupMenu
+    Left = 136
+    Top = 64
+    object CadastrosBsicos1: TMenuItem
+      Caption = '&Cadastros B'#225'sicos'
+    end
+  end
+end

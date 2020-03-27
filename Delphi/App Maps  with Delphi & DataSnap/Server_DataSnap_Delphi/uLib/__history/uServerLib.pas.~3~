@@ -1,0 +1,131 @@
+unit uServerLib;
+
+interface
+
+uses
+  SysUtils,
+  Classes,
+  {$ifndef FPC}
+  Contnrs,
+  {$endif}
+  {$ifndef NOVARIANTS}
+  Variants,
+  {$endif}
+  {$ifdef ISDELPHIXE2}
+  System.Generics.Collections,
+  Data.DB, Data.FMTBcd;
+  {$else}
+  DB, FMTBcd,
+  {$endif}
+  System.Json,
+  System.Json.Writers;
+
+type
+  function DataSetToJSON(Data: TDataSet): RawByteString;
+
+end;
+
+implementation
+
+{ TUtils }
+
+function TUtils.DataSetToJSON(Data: TDataSet): RawByteString;
+var W: TJSONWriter;
+    f: integer;
+    blob: RawByteString;
+begin
+  result := 'null';
+  if Data=nil then
+    exit;
+  Data.First;
+  if Data.Eof then
+    exit;
+  W := TJSONWriter.Create(nil,true,false);
+  try
+    // get col names and types
+    SetLength(W.ColNames,Data.FieldCount);
+    for f := 0 to high(W.ColNames) do
+      StringToUTF8(Data.FieldDefs[f].Name,W.ColNames[f]);
+    W.AddColumns;
+    W.Add('[');
+    repeat
+      W.Add('{');
+      for f := 0 to Data.FieldCount-1 do begin
+        W.AddString(W.ColNames[f]);
+        with Data.Fields[f] do
+        if IsNull then
+          W.AddShort('null') else
+        case DataType of
+        ftBoolean:
+          W.Add(AsBoolean);
+        ftSmallint, ftInteger, ftWord, ftAutoInc:
+          W.Add(AsInteger);
+        ftLargeint:
+          W.Add(TLargeintField(Data.Fields[f]).AsLargeInt);
+        ftFloat, ftCurrency: // TCurrencyField is sadly a TFloatField
+          W.Add(AsFloat,TFloatField(Data.Fields[f]).Precision);
+        ftBCD:
+          W.AddCurr64(AsCurrency);
+        ftFMTBcd:
+          AddBcd(W,AsBCD);
+        ftTimeStamp, ftDate, ftTime, ftDateTime: begin
+          W.Add('"');
+          W.AddDateTime(AsDateTime);
+          W.Add('"');
+        end;
+        ftString, ftFixedChar, ftMemo: begin
+          W.Add('"');
+          W.AddAnsiString({$ifdef UNICODE}AsAnsiString{$else}AsString{$endif},
+            twJSONEscape);
+          W.Add('"');
+        end;
+        ftWideString: begin
+          W.Add('"');
+          W.AddJSONEscapeW(pointer(TWideStringField(Data.Fields[f]).Value));
+          W.Add('"');
+        end;
+        ftVariant:
+          W.AddVariant(AsVariant);
+        ftBytes, ftVarBytes, ftBlob, ftGraphic, ftOraBlob, ftOraClob: begin
+          blob := TRawByteStringStream.Create;
+          try
+            (Data.Fields[f] as TBlobField).SaveToStream(blob);
+            W.WrBase64(pointer(blob.DataString),length(blob.DataString),true);
+          finally
+            blob.Free;
+          end;
+        end;
+        {$ifdef ISDELPHI2007ANDUP}
+        ftWideMemo, ftFixedWideChar: begin
+          W.Add('"');
+          W.AddJSONEscapeW(pointer(AsWideString));
+          W.Add('"');
+        end;
+        {$endif}
+        {$ifdef UNICODE}
+        ftShortint, ftByte:
+          W.Add(AsInteger);
+        ftLongWord:
+          W.AddU(TLongWordField(Data.Fields[f]).Value);
+        ftExtended:
+          W.Add(AsFloat,DOUBLE_PRECISION);
+        ftSingle:
+          W.Add(AsFloat,SINGLE_PRECISION);
+        {$endif}
+        else W.AddShort('null'); // unhandled field type
+        end;
+        W.Add(',');
+      end;
+      W.CancelLastComma;
+      W.Add('}',',');
+      Data.Next;
+    until Data.Eof;
+    W.CancelLastComma;
+    W.Add(']');
+    W.SetText(result);
+  finally
+    W.Free;
+  end;
+end;
+
+end.
