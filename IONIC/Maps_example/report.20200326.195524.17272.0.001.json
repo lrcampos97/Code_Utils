@@ -1,0 +1,305 @@
+
+{
+  "header": {
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200326.195524.17272.0.001.json",
+    "dumpEventTime": "2020-03-26T19:55:24Z",
+    "processId": 17272,
+    "commandLine": [
+      "node",
+      "C:\\Users\\Luiz Felipe Campos\\AppData\\Roaming\\npm\\\\node_modules\\native-run\\bin\\native-run",
+      "--version"
+    ],
+    "nodejsVersion": "v11.13.0",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "11.13.0",
+      "v8": "7.0.276.38-node.18",
+      "uv": "1.27.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "67",
+      "nghttp2": "1.34.0",
+      "napi": "4",
+      "llhttp": "1.1.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1b",
+      "cldr": "34.0",
+      "icu": "63.1",
+      "tz": "2018e",
+      "unicode": "11.0"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v11.13.0/node-v11.13.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v11.13.0/node-v11.13.0.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v11.13.0/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18362",
+    "osVersion": "Windows 10 Home Single Language",
+    "osMachine": "x86_64",
+    "host": "DESKTOP-VU9NREI"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff62b59cffe",
+      "symbol": "SSL_SESSION_get0_peer+15662"
+    },
+    {
+      "pc": "0x00007ff62b59bea9",
+      "symbol": "SSL_SESSION_get0_peer+11225"
+    },
+    {
+      "pc": "0x00007ff62b59b733",
+      "symbol": "SSL_SESSION_get0_peer+9315"
+    },
+    {
+      "pc": "0x00007ff62b689292",
+      "symbol": "uv_loop_fork+88258"
+    },
+    {
+      "pc": "0x00007ff62baafd8e",
+      "symbol": "v8::internal::FatalProcessOutOfMemory+798"
+    },
+    {
+      "pc": "0x00007ff62baafcc7",
+      "symbol": "v8::internal::FatalProcessOutOfMemory+599"
+    },
+    {
+      "pc": "0x00007ff62bb637a4",
+      "symbol": "v8::internal::Heap::RootIsImmortalImmovable+14068"
+    },
+    {
+      "pc": "0x00007ff62bb595c8",
+      "symbol": "v8::internal::Heap::CollectGarbage+7256"
+    },
+    {
+      "pc": "0x00007ff62bb57dc8",
+      "symbol": "v8::internal::Heap::CollectGarbage+1112"
+    },
+    {
+      "pc": "0x00007ff62bb616f7",
+      "symbol": "v8::internal::Heap::RootIsImmortalImmovable+5703"
+    },
+    {
+      "pc": "0x00007ff62bb61776",
+      "symbol": "v8::internal::Heap::RootIsImmortalImmovable+5830"
+    },
+    {
+      "pc": "0x00007ff62bca3255",
+      "symbol": "v8::internal::Factory::NewCodeForDeserialization+53"
+    },
+    {
+      "pc": "0x00007ff62bc972d2",
+      "symbol": "v8::internal::VirtualMemory::TakeControl+3266"
+    },
+    {
+      "pc": "0x00007ff62bcfef6a",
+      "symbol": "v8::internal::UnoptimizedCompilationInfo::operator=+170"
+    },
+    {
+      "pc": "0x00007ff62bed0915",
+      "symbol": "v8::internal::LocalEmbedderHeapTracer::SetEmbedderStackStateForNextFinalization+102277"
+    },
+    {
+      "pc": "0x00000104150d0481",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 3358720,
+    "totalCommittedMemory": 3358720,
+    "usedMemory": 785384,
+    "availableMemory": 1524848496,
+    "memoryLimit": 1526909922,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 524288,
+        "committedMemory": 524288,
+        "capacity": 515584,
+        "used": 33520,
+        "available": 482064
+      },
+      "new_space": {
+        "memorySize": 1048576,
+        "committedMemory": 1048576,
+        "capacity": 1031168,
+        "used": 23968,
+        "available": 1007200
+      },
+      "old_space": {
+        "memorySize": 724992,
+        "committedMemory": 724992,
+        "capacity": 316568,
+        "used": 316568,
+        "available": 0
+      },
+      "code_space": {
+        "memorySize": 524288,
+        "committedMemory": 524288,
+        "capacity": 381088,
+        "used": 381088,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 536576,
+        "committedMemory": 536576,
+        "capacity": 30240,
+        "used": 30240,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 1523359232,
+        "used": 0,
+        "available": 1523359232
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 0,
+        "used": 0,
+        "available": 0
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 0.187,
+    "kernelCpuSeconds": 0.312,
+    "cpuConsumptionPercent": 49.9,
+    "maxRss": 36442112,
+    "pageFaults": {
+      "IORequired": 9360,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 0,
+      "writes": 98
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "=C:": "C:\\IONIC\\Maps\\maps",
+    "allusersprofile": "C:\\ProgramData",
+    "android_home": "C:\\Users\\Luiz Felipe Campos\\AppData\\Local\\Android\\android-sdk",
+    "appdata": "C:\\Users\\Luiz Felipe Campos\\AppData\\Roaming",
+    "chocolateyinstall": "C:\\ProgramData\\chocolatey",
+    "chocolateylastpathupdate": "131989753895880922",
+    "classpath": ".;",
+    "colorterm": "truecolor",
+    "commonprogramfiles": "C:\\Program Files\\Common Files",
+    "commonprogramfiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "commonprogramw6432": "C:\\Program Files\\Common Files",
+    "computername": "DESKTOP-VU9NREI",
+    "comspec": "C:\\WINDOWS\\system32\\cmd.exe",
+    "driverdata": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "exepath": "C:\\Program Files (x86)\\Git\\bin",
+    "force_color": "0",
+    "fps_browser_app_profile_string": "Internet Explorer",
+    "fps_browser_user_profile_string": "Default",
+    "home": "C:\\Users\\Luiz Felipe Campos",
+    "homedrive": "C:",
+    "homepath": "\\Users\\Luiz Felipe Campos",
+    "ionic_cli_bin": "C:\\Users\\Luiz Felipe Campos\\AppData\\Roaming\\npm\\node_modules\\ionic\\bin\\ionic",
+    "ionic_cli_lib": "C:\\Users\\Luiz Felipe Campos\\AppData\\Roaming\\npm\\node_modules\\ionic",
+    "ionic_cli_local_error": "LOCAL_CLI_NOT_FOUND",
+    "java_home": "C:\\Program Files (x86)\\Java\\jdk1.8.0_221",
+    "lang": "pt_BR.UTF-8",
+    "localappdata": "C:\\Users\\Luiz Felipe Campos\\AppData\\Local",
+    "logonserver": "\\\\DESKTOP-VU9NREI",
+    "msystem": "MINGW32",
+    "node_env": "development",
+    "number_of_processors": "4",
+    "onedrive": "C:\\Users\\Luiz Felipe Campos\\OneDrive",
+    "os": "Windows_NT",
+    "path": "C:\\IONIC\\Maps\\maps\\node_modules\\.bin;C:\\Program Files (x86)\\Git\\mingw32\\bin;C:\\Program Files (x86)\\Git\\usr\\bin;C:\\Users\\Luiz Felipe Campos\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Embarcadero\\Studio\\15.0\\bin;C:\\Users\\Public\\Documents\\Embarcadero\\Studio\\15.0\\Bpl;C:\\Program Files (x86)\\Embarcadero\\Studio\\15.0\\bin64;C:\\Users\\Public\\Documents\\Embarcadero\\Studio\\15.0\\Bpl\\Win64;C:\\Program Files (x86)\\Embarcadero\\Studio\\19.0\\bin;C:\\Users\\Public\\Documents\\Embarcadero\\Studio\\19.0\\Bpl;C:\\Program Files (x86)\\Embarcadero\\Studio\\19.0\\bin64;C:\\Users\\Public\\Documents\\Embarcadero\\Studio\\19.0\\Bpl\\Win64;C:\\Program Files (x86)\\Embarcadero\\Studio\\18.0\\bin;C:\\Users\\Luiz Felipe Campos\\Documents\\Embarcadero\\Studio\\18.0\\Bpl;C:\\Program Files (x86)\\Embarcadero\\Studio\\18.0\\bin64;C:\\Users\\Luiz Felipe Campos\\Documents\\Embarcadero\\Studio\\18.0\\Bpl\\Win64;C:\\Users\\Public\\Documents\\Embarcadero\\Studio\\18.0\\Bpl;C:\\Users\\Public\\Documents\\Embarcadero\\Studio\\18.0\\Bpl\\Win64;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\WINDOWS\\system32;C:\\Program Files\\nodejs;C:\\Program Files (x86)\\Java\\jdk1.8.0_221\\bin;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;.;C:\\apache-ant-1.10.2\\bin\";C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Luiz Felipe Campos\\AppData\\Local\\Android\\android-sdk\\plataform-tools;C:\\Users\\Luiz Felipe Campos\\AppData\\Local\\Android\\android-sdk\\tools;C:\\WINDOWS\\System32\\OpenSSH;C:\\Program Files\\Microsoft VS Code\\bin;C:\\ProgramData\\chocolatey\\bin;.;C:\\Program Files\\nodejs\\\";.;C:\\Program Files\\Microsoft\";.;C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\Binn\\\";.;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\110\\Tools\\Binn\\\";C:\\Users\\Luiz Felipe Campos\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Users\\Luiz Felipe Campos\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Luiz Felipe Campos\\AppData\\Roaming\\npm;C:\\Program Files (x86)\\Java\\jdk1.8.0_221\\bin",
+    "pathext": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC",
+    "platform-tools": "C:\\Users\\Luiz Felipe Campos\\AppData\\Local\\Android\\android-sdk\\platform-tools",
+    "plink_protocol": "ssh",
+    "processor_architecture": "AMD64",
+    "processor_identifier": "Intel64 Family 6 Model 78 Stepping 3, GenuineIntel",
+    "processor_level": "6",
+    "processor_revision": "4e03",
+    "programdata": "C:\\ProgramData",
+    "programfiles": "C:\\Program Files",
+    "programfiles(x86)": "C:\\Program Files (x86)",
+    "programw6432": "C:\\Program Files",
+    "PROMPT": "$P$G",
+    "psmodulepath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\PowerShell\\Modules\\",
+    "public": "C:\\Users\\Public",
+    "pwd": "C:/IONIC/Maps/maps",
+    "sessionname": "Console",
+    "shlvl": "2",
+    "systemdrive": "C:",
+    "systemroot": "C:\\WINDOWS",
+    "temp": "C:\\Users\\Luiz Felipe Campos\\AppData\\Local\\Temp",
+    "term": "cygwin",
+    "term_program": "vscode",
+    "term_program_version": "1.43.2",
+    "tmp": "C:\\Users\\Luiz Felipe Campos\\AppData\\Local\\Temp",
+    "userdomain": "DESKTOP-VU9NREI",
+    "userdomain_roamingprofile": "DESKTOP-VU9NREI",
+    "username": "Luiz Felipe Campos",
+    "userprofile": "C:\\Users\\Luiz Felipe Campos",
+    "vbox_msi_install_path": "C:\\Program Files\\Oracle\\VirtualBox\\",
+    "windir": "C:\\WINDOWS",
+    "_": "C:/Program Files/nodejs/node"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+    "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+    "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+    "C:\\WINDOWS\\System32\\PSAPI.DLL",
+    "C:\\WINDOWS\\System32\\WS2_32.dll",
+    "C:\\WINDOWS\\System32\\RPCRT4.dll",
+    "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+    "C:\\WINDOWS\\System32\\msvcrt.dll",
+    "C:\\WINDOWS\\System32\\sechost.dll",
+    "C:\\WINDOWS\\System32\\USER32.dll",
+    "C:\\WINDOWS\\System32\\win32u.dll",
+    "C:\\WINDOWS\\System32\\GDI32.dll",
+    "C:\\WINDOWS\\System32\\gdi32full.dll",
+    "C:\\WINDOWS\\System32\\msvcp_win.dll",
+    "C:\\WINDOWS\\System32\\ucrtbase.dll",
+    "C:\\WINDOWS\\System32\\CRYPT32.dll",
+    "C:\\WINDOWS\\System32\\MSASN1.dll",
+    "C:\\WINDOWS\\System32\\bcrypt.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dbghelp.dll",
+    "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\USERENV.dll",
+    "C:\\WINDOWS\\System32\\profapi.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMMBASE.dll",
+    "C:\\WINDOWS\\System32\\cfgmgr32.dll",
+    "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+    "C:\\WINDOWS\\System32\\IMM32.DLL",
+    "C:\\WINDOWS\\System32\\powrprof.dll",
+    "C:\\WINDOWS\\System32\\UMPDC.dll",
+    "C:\\WINDOWS\\system32\\uxtheme.dll",
+    "C:\\WINDOWS\\System32\\combase.dll",
+    "C:\\WINDOWS\\system32\\mswsock.dll",
+    "C:\\WINDOWS\\System32\\kernel.appcore.dll",
+    "C:\\WINDOWS\\system32\\napinsp.dll",
+    "C:\\WINDOWS\\system32\\pnrpnsp.dll",
+    "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+    "C:\\WINDOWS\\System32\\NSI.dll",
+    "C:\\WINDOWS\\System32\\winrnr.dll",
+    "C:\\WINDOWS\\system32\\NLAapi.dll",
+    "C:\\WINDOWS\\system32\\wshbth.dll",
+    "C:\\Program Files\\Bonjour\\mdnsNSP.dll"
+  ]
+}
