@@ -1,0 +1,31 @@
+  #map {
+    height: 100%;
+  }
+
+  ion-input {
+    font-size: 18px;
+  }
+
+  .mapboxgl-ctrl-top-left {
+    width: 97%;
+  }
+
+  .mapboxgl-ctrl-directions.mapboxgl-ctrl {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .coordinates {
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    padding:5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
+    }
+
