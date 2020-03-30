@@ -1,0 +1,14 @@
+{
+  "name": "SISMEC",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/livronapp",
+      "proxyUrl": "http://livronapp.com/SISMEC/public/usuarios"
+    }
+  ],
+  "id": "fa5e97b2"
+}

@@ -1,0 +1,56 @@
+<ion-content padding no-scroll>
+    
+  <ion-fab top right>
+    <button ion-fab mini (click)="OpenSettings()"><ion-icon name="settings"></ion-icon></button>
+  </ion-fab>  
+
+  <!-- Logo -->
+  <div padding-horizontal text-center class="animated fadeInDown">
+    <div class="logo"></div>  
+  </div>
+
+
+    <ion-item> 
+      <ion-label floating color="primary" class="loja-label">
+          <ion-icon name="basket" item-start class="text-primary"></ion-icon>
+        Loja
+      </ion-label>
+      <ion-input class="loja-input" 
+                  type="text" [(ngModel)]="loja" 
+                  [ngModelOptions]="{standalone: true}" 
+                  disabled="True">
+      </ion-input>
+      <button ion-button large clear class="loja-button" (click)="presentActionSheet()" item-end>
+          <ion-icon name="search"></ion-icon>
+      </button>                
+    </ion-item>
+    <!-- Login form -->
+    <form novalidate class="list-form" [formGroup]="formLogin" (ngSubmit)="validaUsuario()">    
+      <ion-item>
+        <ion-label floating color="primary">
+          <ion-icon name="contact" item-start class="text-primary"></ion-icon>
+          Usuário
+        </ion-label>
+        <ion-input type="text" formControlName="login" ></ion-input>
+      </ion-item>    
+        
+      <ion-item>
+          <ion-label floating color="primary">
+            <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+            Senha
+          </ion-label>
+          <ion-input type="password" formControlName="password" required clearInput ></ion-input>   
+      </ion-item>           
+
+      <div class="button-entrar">
+          <button type="submit" [disabled]="formLogin.invalid" ion-button icon-start block color="primary" tappable style="height: 4.6rem;">
+            <ion-icon name="log-in"></ion-icon>
+              Entrar
+          </button>
+      </div>
+      
+    </form>
+
+      <!-- <p text-right ion-text color="primary" tappable ><strong></strong></p>  -->
+
+</ion-content>

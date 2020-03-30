@@ -1,0 +1,94 @@
+page-login {
+    .scroll-content {
+        overflow: hidden;        
+    }
+    
+    .label-md-primary, .item-input .label-md-primary, .item-select .label-md-primary, .item-datetime .label-md-primary{
+        margin-top: 3px;    
+    }
+
+    .item-label-stacked .text-input-md, .item-label-floating .text-input-md{
+        margin-top: 5px;    
+    }
+
+    
+    .logo{
+        width: 120px;
+        height: 120px;
+        margin: 50px auto 20px;
+        border-radius: 10%;
+        //background: url("/assets/imgs/logo.png") no-repeat;        
+        background-size: 100%;
+    }
+
+    ion-row {
+        align-items: center;
+        text-align: center;
+    }
+    
+    ion-item {
+        background: none;
+        padding: 0;
+        padding-left: 10px !important;            
+
+        &:first-child {
+          border-top: none;
+        }
+
+        &:after {
+          display: none;
+        }
+
+        ion-label {
+          font-size: 1.3em;
+          color: color($colors, primary);
+          margin-top: 0%;
+        }
+
+        .loja-label{
+            margin-right: 0%;
+        }
+        .input-cover{position: static}
+
+        // .text-input-md{
+        //     margin-left: 0%;
+        //     margin-bottom: 0%;
+        //     margin-right: 0%;     
+        // }
+
+        .loja-button{
+            padding-right: 0%;
+            padding-left: 0%;
+            margin-bottom: 0%;
+            margin-right: 0%;
+        }
+      }
+
+    .list-form {
+        padding: 0;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .button-entrar{
+      margin: 30px auto 0;  
+    }
+
+//    @media only screen and (max-width: 480px) {
+//     ion-col.col {
+//       margin: 0 auto;
+//       max-width: 100%;
+//     }
+
+
+//   }
+
+//   @media only screen and (max-width: 720px) {
+//    ion-col.col {
+//      margin: 0 auto;
+//      max-width: 100%;
+//    }
+
+//  }
+
+}

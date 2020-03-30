@@ -1,0 +1,24 @@
+<ion-menu side="left" id="menu" [content]="content">    
+    <div class="menu-header">
+        <!-- <div text-center>
+          <img class="logo" [src]="chosenPicture || placeholder" onerror="this.src='assets/imgs/logo2.png'"/>
+        </div>   -->
+    
+        <p class="name">Teste</p>
+        <p class="loja">Loja Teste</p>      
+     </div>
+    
+      <ion-list>
+        <button menuClose="left" ion-item detail-none (click)="lojas()">
+          <ion-icon name="settings" item-left></ion-icon>
+          Alterar Loja
+        </button>
+    
+        <button menuClose="left" ion-item detail-none  (click)="logout()">
+          <ion-icon name="power" item-left></ion-icon>
+          Sair
+        </button>
+      </ion-list>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

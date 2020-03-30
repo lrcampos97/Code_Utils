@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Dashboard</ion-title>
+
+    <button ion-button icon-only menuToggle="left">
+      <ion-icon name="menu"></ion-icon>    
+    </button>
+  </ion-navbar>    
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+              <ion-chip  *ngFor="let filtro of filtroSelecionado">
+                <ion-label color="black" style="margin-right: 3px;">{{ filtro.name }}</ion-label>
+                <button ion-button clear (click)="openModal()">
+                  <ion-icon name="create"></ion-icon>
+                </button>
+              </ion-chip>        
+        </ion-col>
+        <ion-col style="padding-top: 0px;text-align: right;">            
+          <button ion-button (click)="openModal()">
+              <ion-icon name="options" style="padding-right: 5px;"></ion-icon>
+              Filtros
+          </button>            
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-item>
+          <ion-label>Lojas Disponíveis</ion-label>
+          <ion-select [(ngModel)]="loja_atual" interface="action-sheet" (ionChange)="SelecaoLoja($event);">      
+            <ion-option *ngFor="let loja of array_lojas" value="{{loja.CDLOJA}}">{{ loja.DESCRICAO }}</ion-option>
+          </ion-select>
+        </ion-item>                  
+      </ion-row>
+    </ion-grid>
+
+  <ion-card class="cards">  
+    <ion-card-content class="cards-content">
+     <p>Venda Bruta: R$ 2.000,00</p>
+     <p>Venda Líquida: R$ 2.000,00</p>
+     <p>Custo: R$ 2.000,00</p>
+     <p>Lucro:R$ 0.0</p> 
+     
+     <!-- Accordion List -->
+     <p>Nr. Total Clientes: 10</p>
+     <dd>  > Balcão: 0.0</dd>
+     <dd>  > Tele: 0.0</dd>
+     <p>Desconto Total:  R$ 0.0</p>
+     <dd>  > Desconto Venda     : R$ 0.0</dd>
+     <dd>  > Desconto Promoções : R$ 0.0</dd>
+     <dd>  > Desconto PBM       : R$ 0.0</dd>
+     <dd>  > Desconto Convênios : R$ 0.0</dd>
+     <p>Média Venda Cliente:  R$ 0.0</p>
+     <dd>  > Balcão: R$ 0.0</dd>
+     <dd>  > Tele  : R$ 0.0</dd>     
+     <p>Acréscimos: R$ 0.0</p>
+    </ion-card-content>  
+  </ion-card>
+
+  <ion-card class="cards">  
+      
+    <ion-card-content class="cards-content">        
+      <p>Funcionários:</p>
+    <accordion-list *ngFor="let func of funcionarios; let index = index"
+        [title]="func.NOME"
+        textColor="#ffffff"
+        hasMargin="false"
+        headerColor="#488aff"
+        [expanded]="index === 0">
+
+    <p text-wrap>
+      <dd> > Nº Vendas: 2 </dd>
+      <dd> > Total Vendas: R$ 0.0 </dd>
+      <dd> > Total Desc. Vendas: R$ 0.0 </dd>
+    </p>
+    </accordion-list>
+    
+    </ion-card-content> 
+  </ion-card>
+
+  <ion-card class="cards">  
+    <ion-card-content class="cards-content">
+        <p>Capital(Venda) Total : R$ 0.0</p>
+        <p>Capital(Custo) Total : R$ 0.0</p>
+        <p>Compras Fornecedor   : R$ 0.0</p>
+        <p>Devolução Fornecedor : R$ 0.0</p>
+        <p>Transferências Enviadas: R$ 0.0</p>
+        <p>Transferências Recebidas: R$ 0.0</p>
+    </ion-card-content> 
+  </ion-card>
+
+  <ion-card class="cards">  
+    <ion-card-content class="cards-content">
+        <p>Produtos Vencidos baixados: Un.: R$ 0.0</p>
+        <p>Produtos a Vencer 180 Dias: Un.: R$ 1.500,00</p>
+       </ion-card-content> 
+  </ion-card>
+
+  <ion-card class="cards">  
+    <ion-card-content class="cards-content">
+        <p>Ctas a Pagar Abatidas: R$ 0.0</p>
+        <p>Ctas a Pagar Total   : R$ 0.0</p>
+       </ion-card-content> 
+  </ion-card>
+
+  <ion-card class="cards">  
+    <ion-card-content class="cards-content">
+        <p>Ctas Receber Abatidas Total: R$ 0.0</p>
+        <dd> > Caixa    : R$ 0.0</dd>
+        <dd> > Gerencial: R$ 0.0</dd>
+        <p>Ctas Receber Perdidas : R$ 0.0</p>
+        <p>Ctas Receber Excluidas: R$ 0.0</p>
+        <p>Ctas Receber Total    : R$ 500,00</p>
+    </ion-card-content> 
+  </ion-card>
+</ion-content>

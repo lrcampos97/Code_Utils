@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> Filtros de Pesquisa</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>      
+    <ion-list>
+        <ion-row radio-group  [(ngModel)]="filtro">
+          <ion-col>
+               <ion-item>
+                  <ion-label>Hoje</ion-label>
+                  <ion-radio mode="md" item-left value="Hoje"></ion-radio>
+             </ion-item>
+           </ion-col>
+        </ion-row>
+        <ion-row radio-group  [(ngModel)]="filtro">
+          <ion-col>
+            <ion-item>
+                <ion-label>Semana</ion-label>
+                <ion-radio mode="md" item-left value="Semana"></ion-radio>
+           </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row radio-group  [(ngModel)]="filtro">
+          <ion-col>
+            <ion-item>
+                <ion-label>Mês</ion-label>
+                <ion-radio mode="md" item-left value="Mês"></ion-radio>
+           </ion-item>
+          </ion-col>
+        </ion-row> 
+        <ion-row radio-group  [(ngModel)]="filtro" >
+          <ion-col>
+            <ion-item>
+                <ion-label>Personalizado</ion-label>
+                <ion-radio mode="md" item-left value="Personalizado"></ion-radio>
+           </ion-item>
+
+           <ion-item *ngIf=" filtro == 'Personalizado'">
+              <ion-label>Data Início</ion-label>
+              <ion-datetime displayFormat="DD/MM/YYYY" max="2040-10-31" [(ngModel)]="dataInicio" [ngModelOptions]="{standalone: true}"></ion-datetime>    
+          </ion-item>
+          <ion-item *ngIf=" filtro == 'Personalizado'">
+              <ion-label>Data Fim</ion-label>
+              <ion-datetime displayFormat="DD/MM/YYYY" max="2040-10-31" [(ngModel)]="dataFim" [ngModelOptions]="{standalone: true}"></ion-datetime>    
+          </ion-item>
+          </ion-col>
+        </ion-row>        
+      </ion-list>
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+      <ion-grid class="grid-footer"> 
+          <ion-row>
+            <ion-col col-6>
+                <button ion-button full color="white" class="button-clear" (click)="limparFiltros()">
+                    <ion-label color="primary">Limpar Filtro</ion-label>
+                </button>
+            </ion-col>
+            <ion-col col-6>
+                <button ion-button full color="primary" class="button-filter" (click)="backHome()">Filtrar</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>      
+    </ion-toolbar>
+  </ion-footer>

@@ -1,0 +1,19 @@
+{
+    "items": [
+        {
+            "name": "Nr. Total Clientes",
+            "children": [
+                {
+                    "name": "Special Academy Pizza"                
+                },
+                {
+                    "name": "Pizza Ionic"
+                },
+                {
+                    "name": "Pizza Ionic"
+                }
+            ]
+        }
+    ]
+}
+

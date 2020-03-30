@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Configurações</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding no-scroll>
+  <!-- Logo -->
+  <div padding-horizontal text-center class="animated fadeInDown">
+    <div class="logo"></div>  
+  </div>
+
+    <!-- Login form -->
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating color="primary">
+          <ion-icon name="wifi" item-start class="text-primary"></ion-icon> 
+          IP
+        </ion-label>
+        <ion-input [(ngModel)]="IP" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+        
+      <ion-item>
+          <ion-label floating color="primary">
+            <ion-icon name="cube" item-start class="text-primary"></ion-icon> 
+            Banco
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="BANCO" [ngModelOptions]="{standalone: true}"></ion-input>   
+      </ion-item>            
+    </form>
+
+    <div style="float:right; margin-top: 30px">
+      <button ion-button color="primary" tappable style="height: 4.6rem; margin:0 10px" (click)="SalvarDadosConfig()">        
+        Gravar
+      </button>
+
+      <button ion-button color="primary" tappable style="height: 4.6rem;" (click)="VerificarConexao()">        
+        Testar
+      </button>
+    </div>
+</ion-content>

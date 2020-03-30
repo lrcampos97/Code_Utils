@@ -1,0 +1,5 @@
+[0514/185039.295:ERROR:file_io.cc(89)] ReadExactly: expected 10976, observed 0
+[0514/185039.311:ERROR:crash_report_database_win.cc(445)] failed to read records
+[0514/195017.349:ERROR:file_io.cc(89)] ReadExactly: expected 10976, observed 0
+[0514/195017.349:ERROR:crash_report_database_win.cc(445)] failed to read records
+[1127/191431.287:ERROR:process_info.cc(359)] UncheckedAllocate

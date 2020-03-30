@@ -1,0 +1,46 @@
+
+accordion-list {
+    .nomargin {
+        margin: 0 !important;
+    }
+
+    .accordion-header {
+        color: white;
+
+        .item-inner {
+            margin-left: 0 !important;
+        }
+
+        ion-icon {
+            transition: all .25s ease-in;
+            transform: rotate(0);
+        }
+    }
+
+    .active ion-icon {
+        transform: rotate(90deg);
+    }
+
+    .accordion-content {
+        transition: 0.3s ease-in-out;
+        background: rgb(72, 138, 255);
+        &.active {
+            padding: .75rem;
+        }
+    }
+
+    .label {
+        margin: 0px;
+        color: white;
+    }
+
+    .list-header-md{
+        margin-bottom: 0;
+    }
+
+    
+    accordion-list .accordion-content.active {
+        background: #488aff;
+    } 
+
+}
